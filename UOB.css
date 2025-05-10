@@ -29,6 +29,14 @@
     height: 100%; /* S'assure que la forme couvre tout le conteneur */
     background-color: rgba(223, 17, 17, 0.5); /* Noir avec 50% de transparence */
 }
+#titre{
+    background-color: rgba(0, 153, 255, 0.829);
+    padding: 2rem;
+    border-radius: 10px 0px;
+    opacity: 1; /* état initial */
+    animation: fade-in linear forwards; /* l'animation */
+    animation-timeline:initial; /* synchroniser avec le scroll */
+}
 
 @media (max-width: 768px), (orientation: portrait) {
     #UOB{
