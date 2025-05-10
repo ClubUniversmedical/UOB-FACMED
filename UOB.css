@@ -8,6 +8,28 @@
     color: rgb(28, 153, 255);
 }
 
+#hero{
+
+}
+#hero {
+    position: relative; /* Nécessaire pour le positionnement relatif des enfants */
+    width: 100%; /* Ajustez selon votre besoin */
+    /* max-width: 600px; Largeur maximale de l'image */
+}
+
+.background-image {
+    width: 100%; /* L'image s'adapte à la taille du conteneur */
+    display: block; /* Enlève l'espace sous l'image */
+}
+.overlay {
+    position: absolute; /* Positionnement absolu pour superposer */
+    top: 0; /* Aligne avec le haut du conteneur */
+    left: 0; /* Aligne avec la gauche du conteneur */
+    width: 100%; /* S'assure que la forme couvre tout le conteneur */
+    height: 100%; /* S'assure que la forme couvre tout le conteneur */
+    background-color: rgba(223, 17, 17, 0.5); /* Noir avec 50% de transparence */
+}
+
 @media (max-width: 768px), (orientation: portrait) {
     #UOB{
       font-size: 2rem;
