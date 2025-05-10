@@ -7,3 +7,16 @@
 #sb{
     color: rgb(28, 153, 255);
 }
+
+@media (max-width: 768px), (orientation: portrait) {
+    #UOB{
+      font-size: 2rem;
+      /* color: aqua; */
+      margin-bottom: 0;
+    }
+    #UOB h2{
+        font-size: 1.7rem;
+        margin-top: 0;
+      /* color: aqua; */
+    }
+  }
