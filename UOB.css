@@ -1,10 +1,10 @@
-body {
+        body {
             font-family: Arial, sans-serif;
             text-align: center;
             padding: 50px;
         }
 
-        .btn {
+        .btn{
             display: inline-block;
             padding: 12px 24px;
             font-size: 18px;
@@ -22,19 +22,19 @@ body {
             background-color: #00BFFF; /* Bleu ciel plus intense au survol */
         }
 
-        #section {
+        #section{
             margin-top: 100px;
             padding: 20px;
             background-color: #f1f1f1;
             border-radius: 8px;
         }
-        #programme {
+        #programme{
            margin-top: 100px;
             padding: 20px;
             background-color: #f1f1f1;
             border-radius: 8px;
         }
-        #programme {
+        #programme{
            margin-top: 100px;
             padding: 20px;
             background-color: #f1f1f1;
@@ -50,11 +50,7 @@ body {
 #sb{
     color: rgb(28, 153, 255);
 }
-
 #hero{
-
-}
-#hero {
     position: relative; /* Nécessaire pour le positionnement relatif des enfants */
     width: 100%; /* Ajustez selon votre besoin */
     /* max-width: 600px; Largeur maximale de l'image */
