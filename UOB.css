@@ -95,10 +95,20 @@
         background-color: rgba(0, 153, 255, 0.829);
         padding: 1rem;
         margin-left: 15pt;
-        margin-right: 15pt;
+        /* margin-right: 15pt; */
         border-radius: 10px 0px;
         opacity: 1; /* état initial */
-        animation: fade-in linear forwards; /* l'animation */
-        animation-timeline:initial; /* synchroniser avec le scroll */
     }
+  }
+  @media (max-width: 2500px),(min-width: 1024px){
+    body{
+        font-family: roboto;
+        font-size: 16rem;
+    }
+    @media (max-width: 1024px),(min-width: 768px){
+    body{
+        font-family: roboto;
+        font-size: 16rem;
+    }
+  }
   }
