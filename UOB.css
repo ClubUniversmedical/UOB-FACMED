@@ -31,15 +31,58 @@
         #programme{
            margin-top: 100px;
             padding: 20px;
-            background-color: #f1f1f1;
-            border-radius: 8px;
+            background-color: #F0F7FF;
+            border-radius: 10px;
+            text-align: center;
+            list-style: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        #programme{
-           margin-top: 100px;
+
+        #programme ul li{
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #00BFFF;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            list-style: none;
+            transition: 1s all;
+        }
+
+        #programme ul li:hover{
+            transform: scale(1.1);
+            cursor: pointer;
+            /* margin: 10px 0;
+            padding: 10px;
+            background-color: #00BFFF;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            list-style: none; */
+        }
+
+        #programme ol li{
+            margin: 10px 0;
+            padding: 10px;
+            /* background-color: #00BFFF; */
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            list-style: none;
+        }
+
+
+        #programme img{
+            border-radius: 10px;
+        }
+
+        #presentation{
+            margin-top: 100px;
             padding: 20px;
-            background-color: #f1f1f1;
-            border-radius: 8px;
+            background-color: #F0F7FF;
+            border-radius: 10px;
+            text-align: center;
+            list-style: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+
 
 #su {
     color : red;
@@ -146,4 +189,7 @@
             width: 30px;
             height: 30px;
             margin-right: 10px;
+        }
+        #inscription{
+            display: flex;
         }
