@@ -137,6 +137,7 @@
     #inscription{
             display: flex;
             flex-direction: column;
+            justify-content: center;
         }
         #inscription img{
             width: 300px;
