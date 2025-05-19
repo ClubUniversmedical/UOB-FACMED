@@ -134,6 +134,10 @@
         margin-top: 0;
       /* color: aqua; */
     }
+    #inscription{
+            display: flex;
+            flex-direction: column;
+        }
     #titre{
         background-color: rgba(0, 153, 255, 0.829);
         padding: 1rem;
@@ -193,3 +197,4 @@
         #inscription{
             display: flex;
         }
+
