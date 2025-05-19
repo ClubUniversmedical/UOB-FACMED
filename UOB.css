@@ -91,7 +91,7 @@
     color: yellow;
 }
 #sb{
-    color: rgb(28, 153, 255);
+    color: #1c99ff;
 }
 #hero{
     position: relative; /* Nécessaire pour le positionnement relatif des enfants */
