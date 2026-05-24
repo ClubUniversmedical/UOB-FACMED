@@ -230,7 +230,7 @@
           <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="row justify-content-center">
               <div class="col-lg-8">
-                <form action="https://sheetdb.io/api/v1/VOTRE_ID_ICI" method="post" id="sheetdb-form" class="bg-white p-4 p-md-5 rounded shadow-sm">
+         <form action="https://sheetdb.io/api/v1/zov7hyy3ccol5" method="post" id="sheetdb-form" class="bg-white p-4 p-md-5 rounded shadow-sm">
   <div class="row gy-4">
     
     <div class="col-md-6">
@@ -242,10 +242,9 @@
       <label for="status" class="form-label fw-bold">Votre Profil <span class="text-danger">*</span></label>
       <select class="form-select" name="status" id="status" required>
         <option value="" selected disabled>Sélectionnez votre statut</option>
-        <option value="interne">Participant Médecin Interne</option>
-        <option value="etudiant">Participant Étudiant en Médecine</option>
-          <option value="etudiant">Organisateur</option>
-        <option value="autre">Formateur</option>
+        <option value="interne">Médecin Interne / Stagiaire</option>
+        <option value="etudiant">Étudiant en Médecine</option>
+        <option value="autre">Autre professionnel de santé</option>
       </select>
     </div>
 
@@ -254,15 +253,23 @@
       <div class="d-flex flex-wrap gap-3 mt-1">
         <div class="form-check">
           <input class="form-check-input" type="radio" name="relevance" id="rel-4" value="Excellent" required>
-          <label class="form-check-item" for="rel-4">Excellent</label>
+          <label class="form-check-label" for="rel-4">Excellent</label>
         </div>
         <div class="form-check">
           <input class="form-check-input" type="radio" name="relevance" id="rel-3" value="Très bien">
-          <label class="form-check-item" for="rel-3">Très bien</label>
+          <label class="form-check-label" for="rel-3">Très bien</label>
         </div>
         <div class="form-check">
           <input class="form-check-input" type="radio" name="relevance" id="rel-2" value="Bien">
-          <label class="form-check-item" for="rel-2">Bien</label>
+          <label class="form-check-label" for="rel-2">Bien</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="relevance" id="rel-1" value="Assez bien">
+          <label class="form-check-label" for="rel-1">Assez bien</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="relevance" id="rel-0" value="Médiocre">
+          <label class="form-check-label" for="rel-0">Médiocre</label>
         </div>
       </div>
     </div>
@@ -272,22 +279,30 @@
       <div class="d-flex flex-wrap gap-3 mt-1">
         <div class="form-check">
           <input class="form-check-input" type="radio" name="quality" id="qual-4" value="Excellent" required>
-          <label class="form-check-item" for="qual-4">Excellent</label>
+          <label class="form-check-label" for="qual-4">Excellent</label>
         </div>
         <div class="form-check">
           <input class="form-check-input" type="radio" name="quality" id="qual-3" value="Très bien">
-          <label class="form-check-item" for="qual-3">Très bien</label>
+          <label class="form-check-label" for="qual-3">Très bien</label>
         </div>
         <div class="form-check">
           <input class="form-check-input" type="radio" name="quality" id="qual-2" value="Bien">
-          <label class="form-check-item" for="qual-2">Bien</label>
+          <label class="form-check-label" for="qual-2">Bien</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="quality" id="qual-1" value="Assez bien">
+          <label class="form-check-label" for="qual-1">Assez bien</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="quality" id="qual-0" value="Médiocre">
+          <label class="form-check-label" for="qual-0">Médiocre</label>
         </div>
       </div>
     </div>
 
     <div class="col-12">
       <label for="comments" class="form-label fw-bold">Vos commentaires ou suggestions <span class="text-danger">*</span></label>
-      <textarea class="form-control" name="comments" id="comments" rows="5" required></textarea>
+      <textarea class="form-control" name="comments" id="comments" rows="5" required placeholder="Qu'avez-vous apprécié ou que devrions-nous améliorer ?"></textarea>
     </div>
 
     <div class="col-12 text-center mt-4">
@@ -295,7 +310,7 @@
     </div>
 
     <div id="success-msg" class="alert alert-success mt-3 d-none">
-       Merci ! Vos réponses ont été enregistrées avec succès.
+       <i class="bi bi-check-circle-fill me-2"></i> Merci ! Vos réponses ont été enregistrées avec succès dans le tableur.
     </div>
 
   </div>
@@ -305,16 +320,30 @@
   var form = document.getElementById('sheetdb-form');
   form.addEventListener("submit", e => {
     e.preventDefault();
+    
+    // Changement du texte du bouton pendant l'envoi
+    const btn = form.querySelector('button');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = "Envoi en cours...";
+    btn.disabled = true;
+
     fetch(form.action, {
         method : "POST",
         body: new FormData(document.getElementById("sheetdb-form")),
     }).then(
         response => response.json()
     ).then((html) => {
-        // Cacher le bouton et afficher le message de succès
-        form.querySelector('button').style.display = 'none';
+        // Succès
+        btn.style.display = 'none';
         document.getElementById('success-msg').classList.remove('d-none');
         form.reset();
+        
+        // Optionnel : scroll vers le message de succès
+        document.getElementById('success-msg').scrollIntoView({ behavior: 'smooth' });
+    }).catch(err => {
+        alert("Une erreur est survenue. Vérifiez votre connexion.");
+        btn.innerHTML = originalText;
+        btn.disabled = false;
     });
   });
 </script>
