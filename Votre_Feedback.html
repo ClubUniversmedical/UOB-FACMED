@@ -230,79 +230,93 @@
           <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="row justify-content-center">
               <div class="col-lg-8">
-                <form action="#" method="post" role="form" class="bg-white p-4 p-md-5 rounded shadow-sm">
-                  <div class="row gy-4">
-                    
-                    <div class="col-md-6">
-                      <label for="name" class="form-label fw-bold">Nom complet (Optionnel)</label>
-                      <input type="text" name="name" class="form-control" id="name" placeholder="Votre nom">
-                    </div>
+                <form action="https://sheetdb.io/api/v1/VOTRE_ID_ICI" method="post" id="sheetdb-form" class="bg-white p-4 p-md-5 rounded shadow-sm">
+  <div class="row gy-4">
+    
+    <div class="col-md-6">
+      <label for="name" class="form-label fw-bold">Nom complet (Optionnel)</label>
+      <input type="text" name="name" class="form-control" id="name" placeholder="Votre nom">
+    </div>
 
-                    <div class="col-md-6">
-                      <label for="status" class="form-label fw-bold">Votre Profil <span class="text-danger">*</span></label>
-                      <select class="form-select" name="status" id="status" required>
-                        <option value="" selected disabled>Sélectionnez votre statut</option>
-                        <option value="interne">Médecin Interne / Stagiaire</option>
-                        <option value="etudiant">Étudiant en Médecine</option>
-                        <option value="autre">Autre professionnel de santé</option>
-                      </select>
-                    </div>
+    <div class="col-md-6">
+      <label for="status" class="form-label fw-bold">Votre Profil <span class="text-danger">*</span></label>
+      <select class="form-select" name="status" id="status" required>
+        <option value="" selected disabled>Sélectionnez votre statut</option>
+        <option value="interne">Médecin Interne / Stagiaire</option>
+        <option value="etudiant">Étudiant en Médecine</option>
+        <option value="autre">Autre professionnel de santé</option>
+      </select>
+    </div>
 
-                    <div class="col-12">
-                      <label class="form-label fw-bold">1. Comment évaluez-vous la pertinence des sujets abordés ? <span class="text-danger">*</span></label>
-                      <div class="d-flex flex-wrap gap-3 mt-1">
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" name="relevance" id="rel-4" value="excellent" required>
-                          <label class="form-check-item" for="rel-4">Excellent</label>
-                        </div>
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" name="relevance" id="rel-3" value="tres-bien">
-                          <label class="form-check-item" for="rel-3">Très bien</label>
-                        </div>
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" name="relevance" id="rel-2" value="bien">
-                          <label class="form-check-item" for="rel-2">Bien</label>
-                        </div>
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" name="relevance" id="rel-1" value="assez-bien">
-                          <label class="form-check-item" for="rel-1">Assez bien</label>
-                        </div>
-                      </div>
-                    </div>
+    <div class="col-12">
+      <label class="form-label fw-bold">1. Comment évaluez-vous la pertinence des sujets abordés ? <span class="text-danger">*</span></label>
+      <div class="d-flex flex-wrap gap-3 mt-1">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="relevance" id="rel-4" value="Excellent" required>
+          <label class="form-check-item" for="rel-4">Excellent</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="relevance" id="rel-3" value="Très bien">
+          <label class="form-check-item" for="rel-3">Très bien</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="relevance" id="rel-2" value="Bien">
+          <label class="form-check-item" for="rel-2">Bien</label>
+        </div>
+      </div>
+    </div>
 
-                    <div class="col-12">
-                      <label class="form-label fw-bold">2. Qualité des présentations et de l'animation des formateurs : <span class="text-danger">*</span></label>
-                      <div class="d-flex flex-wrap gap-3 mt-1">
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" name="quality" id="qual-4" value="excellent" required>
-                          <label class="form-check-item" for="qual-4">Excellent</label>
-                        </div>
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" name="quality" id="qual-3" value="tres-bien">
-                          <label class="form-check-item" for="qual-3">Très bien</label>
-                        </div>
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" name="quality" id="qual-2" value="bien">
-                          <label class="form-check-item" for="qual-2">Bien</label>
-                        </div>
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" name="quality" id="qual-1" value="assez-bien">
-                          <label class="form-check-item" for="qual-1">Assez bien</label>
-                        </div>
-                      </div>
-                    </div>
+    <div class="col-12">
+      <label class="form-label fw-bold">2. Qualité des présentations et formateurs : <span class="text-danger">*</span></label>
+      <div class="d-flex flex-wrap gap-3 mt-1">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="quality" id="qual-4" value="Excellent" required>
+          <label class="form-check-item" for="qual-4">Excellent</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="quality" id="qual-3" value="Très bien">
+          <label class="form-check-item" for="qual-3">Très bien</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="quality" id="qual-2" value="Bien">
+          <label class="form-check-item" for="qual-2">Bien</label>
+        </div>
+      </div>
+    </div>
 
-                    <div class="col-12">
-                      <label for="comments" class="form-label fw-bold">Vos commentaires, suggestions ou points à améliorer <span class="text-danger">*</span></label>
-                      <textarea class="form-control" name="comments" id="comments" rows="5" placeholder="Qu'avez-vous le plus apprécié ? Quelles sont vos recommandations pour les prochaines sessions ?" required></textarea>
-                    </div>
+    <div class="col-12">
+      <label for="comments" class="form-label fw-bold">Vos commentaires ou suggestions <span class="text-danger">*</span></label>
+      <textarea class="form-control" name="comments" id="comments" rows="5" required></textarea>
+    </div>
 
-                    <div class="col-12 text-center mt-4">
-                      <button type="submit" class="btn btn-primary px-5 py-3 rounded-pill fw-bold fs-5 shadow-sm">Donner mon avis</button>
-                    </div>
+    <div class="col-12 text-center mt-4">
+      <button type="submit" class="btn btn-primary px-5 py-3 rounded-pill fw-bold shadow-sm">Donner mon avis</button>
+    </div>
 
-                  </div>
-                </form>
+    <div id="success-msg" class="alert alert-success mt-3 d-none">
+       Merci ! Vos réponses ont été enregistrées avec succès.
+    </div>
+
+  </div>
+</form>
+
+<script>
+  var form = document.getElementById('sheetdb-form');
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    fetch(form.action, {
+        method : "POST",
+        body: new FormData(document.getElementById("sheetdb-form")),
+    }).then(
+        response => response.json()
+    ).then((html) => {
+        // Cacher le bouton et afficher le message de succès
+        form.querySelector('button').style.display = 'none';
+        document.getElementById('success-msg').classList.remove('d-none');
+        form.reset();
+    });
+  });
+</script>
               </div>
             </div>
           </div>
