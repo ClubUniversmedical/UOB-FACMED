@@ -62,14 +62,63 @@
     </header>
      
     <main class="main">
-      <section id="hero" class="hero section light-background">
+     <style>
+    /* Couleurs spécifiques pour les lettres U, O, B */
+    #su { color: #ff0000; font-weight: bold; } /* Rouge */
+    #so { color: #ffcc00; font-weight: bold; } /* Jaune/Or */
+    #sb { color: #0000ff; font-weight: bold; } /* Bleu */
+
+    /* Style pour la forme transparente derrière le texte */
+    .hero-glass-box {
+        background: rgba(255, 255, 255, 0.2); /* Fond blanc très transparent */
+        backdrop-filter: blur(10px);          /* Effet de flou derrière la forme */
+        -webkit-backdrop-filter: blur(10px);   /* Compatibilité Safari */
+        border-radius: 20px;                   /* Arrondi des angles */
+        padding: 40px;                         /* Espacement interne */
+        border: 1px solid rgba(255, 255, 255, 0.3); /* Bordure légère pour l'effet vitre */
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2); /* Ombre pour donner du relief */
+        margin-top: 20px;
+        display: inline-block;                 /* Adapte la taille au contenu */
+    }
+
+    /* Ajustement pour que le texte soit bien lisible sur l'image */
+    #UOB h2, #UOB p {
+        color: #ffffff; /* Texte en blanc pour contraste (ajustez si nécessaire) */
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero {
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Pour s'assurer que le texte s'affiche bien par-dessus l'image */
+    .hero .container {
+        z-index: 2;
+    }
+</style>
+
+<section id="hero" class="hero section light-background">
     <img src="zoonoses.jpg" alt="Zoonoses Banner" data-aos="fade-in" class="img-fluid pt-0">
     
     <div class="container position-relative">
         <div id="UOB" class="col-sm-4 col-lg-12 col-md-8 welcome position-relative hero-glass-box" data-aos="fade-down" data-aos-delay="100">
-            <h2><span id="su">U</span>niversité <span id="so">O</span>fficielle de <span id="sb">B</span>ukavu / Faculté de Médecine</h2>
-            <h2 id="titre">Journées Scientifiques de Formation Continue sur les <span class="text-success">Zoonoses</span> 2026</h2>
-            <p id="theme"><strong>« Approche One Health : Collaborer pour mieux prévenir et contrôler les maladies émergentes »</strong></p>
+            
+            <h2>
+                <span id="su">U</span>niversité 
+                <span id="so">O</span>fficielle de 
+                <span id="sb">B</span>ukavu / Faculté de Médecine
+            </h2>
+
+            <h2 id="titre">
+                Journées Scientifiques de Formation Continue sur les 
+                <span class="text-success">Zoonoses</span> 2026
+            </h2>
+
+            <p id="theme">
+                <strong>« Approche One Health : Collaborer pour mieux prévenir et contrôler les maladies émergentes »</strong>
+            </p>
+
         </div>
     </div>
 </section>
