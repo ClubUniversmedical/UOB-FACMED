@@ -62,47 +62,87 @@
     </header>
      
     <main class="main">
-     <style>
-    /* Couleurs spécifiques pour les lettres U, O, B */
+    <style>
+    /* 1. Couleurs spécifiques pour les lettres U, O, B */
     #su { color: #ff0000; font-weight: bold; } /* Rouge */
-    #so { color: #ffcc00; font-weight: bold; } /* Jaune/Or */
+    #so { color: #ffcc00; font-weight: bold; } /* Jaune */
     #sb { color: #0000ff; font-weight: bold; } /* Bleu */
 
-    /* Style pour la forme transparente derrière le texte */
-    .hero-glass-box {
-        background: rgba(255, 255, 255, 0.2); /* Fond blanc très transparent */
-        backdrop-filter: blur(10px);          /* Effet de flou derrière la forme */
-        -webkit-backdrop-filter: blur(10px);   /* Compatibilité Safari */
-        border-radius: 20px;                   /* Arrondi des angles */
-        padding: 40px;                         /* Espacement interne */
-        border: 1px solid rgba(255, 255, 255, 0.3); /* Bordure légère pour l'effet vitre */
-        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2); /* Ombre pour donner du relief */
-        margin-top: 20px;
-        display: inline-block;                 /* Adapte la taille au contenu */
-    }
-
-    /* Ajustement pour que le texte soit bien lisible sur l'image */
-    #UOB h2, #UOB p {
-        color: #ffffff; /* Texte en blanc pour contraste (ajustez si nécessaire) */
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    }
-
+    /* 2. Configuration du Hero pour la réactivité mobile */
     .hero {
         position: relative;
+        width: 100%;
+        min-height: 100vh; /* S'adapte à la hauteur de l'écran */
+        display: flex;
+        align-items: center;
+        justify-content: center;
         overflow: hidden;
     }
 
-    /* Pour s'assurer que le texte s'affiche bien par-dessus l'image */
-    .hero .container {
-        z-index: 2;
+    /* Image de fond responsive */
+    .hero-bg-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Important : remplit l'espace sans déformer */
+        z-index: 1;
+    }
+
+    /* 3. Cadre sombre, flou et transparent (Glassmorphism Dark) */
+    .hero-glass-box {
+        position: relative;
+        z-index: 2; /* Passe devant l'image */
+        background: rgba(0, 0, 0, 0.6); /* Fond noir transparent */
+        backdrop-filter: blur(12px);    /* Effet de flou */
+        -webkit-backdrop-filter: blur(12px);
+        border-radius: 25px;
+        padding: 40px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        max-width: 900px;
+        width: 90%; /* Responsive sur mobile */
+        margin: 20px;
+        text-align: center;
+    }
+
+    /* 4. Lisibilité du texte */
+    #UOB h2, #UOB p {
+        color: #ffffff !important; /* Texte blanc pur */
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        margin-bottom: 15px;
+    }
+
+    #titre {
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+
+    #theme {
+        font-size: 1.1rem;
+        opacity: 0.9;
+    }
+
+    /* Ajustements pour mobile */
+    @media (max-width: 768px) {
+        .hero-glass-box {
+            padding: 25px 15px;
+        }
+        #UOB h2 {
+            font-size: 1.4rem;
+        }
+        #titre {
+            font-size: 1.3rem;
+        }
     }
 </style>
 
-<section id="hero" class="hero section light-background">
-    <img src="zoonoses.jpg" alt="Zoonoses Banner" data-aos="fade-in" class="img-fluid pt-0">
+<section id="hero" class="hero section">
+    <img src="zoonoses.jpg" alt="Zoonoses Banner" class="hero-bg-img">
     
     <div class="container position-relative">
-        <div id="UOB" class="col-sm-4 col-lg-12 col-md-8 welcome position-relative hero-glass-box" data-aos="fade-down" data-aos-delay="100">
+        <div id="UOB" class="welcome hero-glass-box" data-aos="fade-down" data-aos-delay="100">
             
             <h2>
                 <span id="su">U</span>niversité 
@@ -122,7 +162,6 @@
         </div>
     </div>
 </section>
-
         <!-- About Section -->
         <section id="about" class="about section">
             <div class="container">
