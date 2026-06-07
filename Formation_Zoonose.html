@@ -22,7 +22,86 @@
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   
     <link href="assets/css/main.css" rel="stylesheet">
-  
+  <style>
+      /* Styles pour la section Activités (CUM) */
+.activities .section-title {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.activity-card {
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #eef2f5;
+}
+
+.activity-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.activity-img-wrapper {
+    position: relative;
+    height: 220px;
+    background: #e2e8f0;
+    overflow: hidden;
+}
+
+.activity-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.activity-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffffff;
+    z-index: 2;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.badge-current { background-color: #0d6efd; }   /* Bleu pour En cours */
+.badge-upcoming { background-color: #198754; }  /* Vert pour À venir */
+.badge-past { background-color: #6c757d; }      /* Gris pour Clôturée */
+
+.activity-body {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.activity-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 12px;
+}
+
+.activity-text {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    flex-grow: 1;
+    line-height: 1.5;
+}
+
+.activity-footer {
+    margin-top: 20px;
+}
+      </style>
     <script>
     (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
     .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
@@ -463,6 +542,85 @@
             </div>
         </section>
 
+
+
+<section id="activities" class="activities section">
+    
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Nos Activités</h2>
+        <p>Suivez l'état d'avancement des projets et ateliers du Club Univers Médical</p>
+    </div>
+
+    <div class="container">
+        <div class="row gy-4">
+            
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="activity-card">
+                    <div class="activity-img-wrapper">
+                        <img src="assets/img/activite-actuelle.jpg" alt="Activité en cours" onerror="this.src='https://via.placeholder.com/400x250?text=Image+Activité+Actuelle'">
+                        <span class="activity-badge badge-current">
+                            <i class="bi bi-play-circle-fill me-1"></i> En cours
+                        </span>
+                    </div>
+                    <div class="activity-body">
+                        <h4 class="activity-title">Formation Continue sur les Zoonoses</h4>
+                        <p class="activity-text">
+                            Ateliers multidisciplinaires et partages scientifiques basés sur l'approche One Health aux Cliniques Universitaires de Bukavu.
+                        </p>
+                        <div class="activity-footer">
+                            <a href="#services" class="btn btn-primary btn-sm w-100">En savoir plus</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="activity-card">
+                    <div class="activity-img-wrapper">
+                        <img src="assets/img/prochaine-activite.jpg" alt="Prochaine Activité" onerror="this.src='https://via.placeholder.com/400x250?text=Prochaine+Activité'">
+                        <span class="activity-badge badge-upcoming">
+                            <i class="bi bi-calendar-event me-1"></i> À venir
+                        </span>
+                    </div>
+                    <div class="activity-body">
+                        <h4 class="activity-title">Campagne Globale de Sensibilisation</h4>
+                        <p class="activity-text">
+                            Déploiement communautaire dans les écoles et universités cibles de Bukavu pour la distribution de kits sanitaires de prévention.
+                        </p>
+                        <div class="activity-footer">
+                            <a href="#about" class="btn btn-success btn-sm w-100">En savoir plus</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="activity-card" style="opacity: 0.85;">
+                    <div class="activity-img-wrapper">
+                        <img src="assets/img/activite-passee.jpg" alt="Activité passée" onerror="this.src='https://via.placeholder.com/400x250?text=Activité+Clôturée'">
+                        <span class="activity-badge badge-past">
+                            <i class="bi bi-lock-fill me-1"></i> Clôturée
+                        </span>
+                    </div>
+                    <div class="activity-body">
+                        <h4 class="activity-title">
+                            <i class="bi bi-lock-fill text-secondary me-1"></i> Symposium Urgences Médicales
+                        </h4>
+                        <p class="activity-text">
+                            Évaluation et mise en place de recommandations stratégiques sur l'état global du système de soins d'urgence en RDC.
+                        </p>
+                        <div class="activity-footer">
+                            <a href="#gallery" class="btn btn-secondary btn-sm w-100">En savoir plus (Archives)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+        
         <!-- Gallery Section -->
         <section id="gallery" class="gallery section">
             <div class="container section-title" data-aos="fade-up">
