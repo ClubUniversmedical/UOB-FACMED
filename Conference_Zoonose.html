@@ -60,55 +60,27 @@
           </div>
         </div>
     </header>
-     <!-- Début de la Bande Passante Défilante -->
-<div class="bande-passante-container">
-    <div class="bande-passante-texte">
-        <span>✦ Sous le Haut Patronage du Recteur de l'Université Officielle de Bukavu ✦ Centres de Recherche de l'UOB ✦ Sous le Haut Patronage du Recteur de l'Université Officielle de Bukavu ✦ Centres de Recherche de l'UOB ✦</span>
+    <!-- ================================================================================= -->
+<!-- DEBUT DE LA BANDE PASSANTE DEFILANTE -->
+<!-- ================================================================================= -->
+<div class="bande-passante-container" style="width: 100%; background-color: #ff0000; color: #ffffff; overflow: hidden; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); z-index: 996; position: relative; padding: 10px 0; font-family: 'Poppins', sans-serif; font-weight: 600; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;">
+    <div class="bande-passante-texte" style="display: inline-block; white-space: nowrap; padding-left: 100%; animation: defilementBande 30s linear infinite;">
+        <span>✦ Sous le Haut Patronage du Recteur de l'Université Officielle de Bukavu ✦ Les Centres de Recherche de l'UOB organisent la conférence scientifique interdisciplinaire ✦ Scientia et Conscientia Splendet ✦</span>
     </div>
 </div>
 
 <style>
-/* Style du conteneur de la bande passante */
-.bande-passante-container {
-    width: 100%;
-    background-color: #ff0000; /* Fond rouge (une des couleurs de l'UOB), modifiable selon vos préférences */
-    color: #ffffff;            /* Texte blanc pour un contraste maximal */
-    overflow: hidden;          /* Cache tout ce qui dépasse du cadre */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 996;              /* S'assure de rester visible sous le header sticky */
-    position: relative;
-    padding: 10px 0;           /* Donne de la hauteur à la bande */
-    font-family: "Poppins", "Roboto", sans-serif;
-    font-weight: 600;
-    text-transform: uppercase; /* Met le texte en majuscules pour un effet "breaking news" */
-    font-size: 0.95rem;
-    letter-spacing: 1px;
+@keyframes defilementBande {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-100%, 0, 0); }
 }
-
-/* Style du bloc de texte qui va bouger */
-.bande-passante-texte {
-    display: inline-block;
-    white-space: nowrap;       /* Empêche le texte de revenir à la ligne */
-    padding-left: 100%;        /* Fait commencer le texte en dehors de l'écran à droite */
-    animation: defilement 25s linear infinite; /* Boucle infinie, vitesse ajustable (25 secondes ici) */
-}
-
-/* Animation CSS pour le défilement fluide */
-@keyframes defilement {
-    0% {
-        transform: translate3d(0, 0, 0);
-    }
-    100% {
-        transform: translate3d(-100%, 0, 0); /* Déplace le texte entièrement vers la gauche */
-    }
-}
-
-/* Optionnel : Met l'animation en pause si l'utilisateur survole la bande avec sa souris */
 .bande-passante-container:hover .bande-passante-texte {
     animation-play-state: paused;
 }
 </style>
-<!-- Fin de la Bande Passante Défilante -->
+<!-- ================================================================================= -->
+<!-- FIN DE LA BANDE PASSANTE DEFILANTE -->
+<!-- ================================================================================= -->
     <main class="main">
     <style>
     /* 1. Couleurs spécifiques pour les lettres U, O, B */
