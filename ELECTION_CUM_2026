@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Élections CUM 2026 - Club Univers Médical</title>
+    <meta content="Appel à candidature et élections du bureau directeur et des départements du CUM UOB" name="description"> 
+    <meta content="Élections, CUM, UOB, Médecine, Candidature" name="keywords">
+  
+    <link href="favicon.jfif" rel="icon">
+    <link href="favicon.jfif" rel="apple-touch-icon">
+  
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  
+    <link href="assets/css/main.css" rel="stylesheet">
+</head>
+<body>
+    <header id="header" class="header sticky-top">
+        <div class="branding d-flex align-items-center">
+          <div class="container position-relative d-flex align-items-center justify-content-between">
+            <a href="index.html" class="logo d-flex align-items-center me-auto">
+              <h1 class="sitename">
+                <div class="cum">
+                  <div class="cum1"><span style="color: firebrick;">C</span>lub</div>
+                  <div class="cum1"><span style="color: firebrick;">U</span>nivers</div>
+                  <div class="cum1"><span style="color: firebrick;">M</span>édical</div>
+                </div>
+              </h1>
+            </a>
+    
+            <nav id="navmenu" class="navmenu">
+              <ul>
+                <li><a href="index.html">Accueil<br></a></li>
+                <li><a href="#about" class="active">Élections 2026</a></li>
+                <li><a href="#postes">Postes Ouverts</a></li>
+                <li><a href="#criteres">Critères</a></li>
+                <li><a href="#planning">Chronogramme</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+              <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+    
+            <!-- Bouton Vert POSTULER -->
+            <a href="https://forms.gle/votre-lien-google-form" target="_blank" class="btn btn-success text-white fw-bold px-4 py-2 rounded-pill d-none d-sm-block">
+                <i class="bi bi-pencil-square me-1"></i> POSTULER
+            </a>
+    
+          </div>
+        </div>
+      </header>
+      
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section light-background">
+      <div class="container position-relative">
+        <div id="UOB" class="col-sm-4 col-lg-12 col-md-8 welcome position-relative text-center" data-aos="fade-down" data-aos-delay="100">
+          <h2><span id="su">U</span>niversité <span id="so">O</span>fficielle de <span id="sb">B</span>ukavu / Faculté de Médecine</h2>
+          <h2 id="titre" class="mt-2">Élections des Nouveaux Animateurs <span class="text-success">CUM 2026</span></h2>
+          <p id="theme" class="fs-5"><strong>« Engagement, Leadership et Excellence au Service de la Communauté Médicale »</strong></p>
+          
+          <div class="mt-4">
+              <a href="https://forms.gle/votre-lien-google-form" target="_blank" class="btn btn-success btn-lg text-white fw-bold px-5 py-3 rounded-pill shadow">
+                  <i class="bi bi-check-circle-fill me-2"></i> POSTULER MAINTENANT
+              </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Appel à Candidatures -->
+    <section id="about" class="about section">
+      <div class="container">
+        <div class="row gy-4 gx-5">
+          
+          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+            <h3>Appel à Candidatures <span style="color: #1977cc;">CUM 2026</span></h3>
+            <p>
+              Chers Membres du Club Univers Médical,<br><br>
+              Dans le cadre du respect des principes et du Règlement d’Ordre Intérieur du CUM portant sur l’organisation des élections, la Commission Électorale met à votre disposition les modalités pour le dépôt de vos candidatures aux différents postes du Bureau Directeur et des Sous-Bureaux.
+            </p>
+            
+            <a href="APPEL CANDIDATURE ELECTION CUM 2026.pdf" download class="download-btn btn btn-danger text-white px-3 py-2 rounded d-inline-flex align-items-center mb-4">
+                <i class="bi bi-file-earmark-pdf me-2 fs-5"></i> TÉLÉCHARGER L'APPEL OFFICIEL (PDF)
+            </a>
+          </div>
+
+          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="200">
+            <h3>Espace Dépôt de Candidature</h3>
+            <p class="text-muted">Remplissez le formulaire en ligne pour soumettre votre dossier avant la date limite :</p>
+            
+            <div class="card mb-3 border-left-success shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title text-success"><i class="bi bi-card-checklist me-2"></i> Formulaire de Candidature</h5>
+                <p class="card-text small mb-3">
+                  <strong>Période de dépôt :</strong> Du 21 au 24 Septembre 2026<br>
+                  <strong>Éligibilité :</strong> Réservé aux membres actifs du CUM selon le poste visé.
+                </p>
+                <a href="https://forms.gle/votre-lien-google-form" target="_blank" class="btn btn-success w-100 fw-bold py-2">
+                    <i class="bi bi-send me-2"></i> ACCÉDER AU FORMULAIRE "POSTULER"
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Postes Ouverts -->
+    <section id="postes" class="services section light-background">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Postes à Pourvoir</h2>
+        <p>Découvrez la structure du Bureau Directeur et des Départements du Club Univers Médical</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+          
+          <div class="col-md-6">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-header bg-primary text-white fw-bold fs-5">
+                <i class="bi bi-shield-lock-fill me-2"></i> Comité Directeur
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><i class="bi bi-check2-circle text-primary me-2"></i> Président(e)</li>
+                <li class="list-group-item"><i class="bi bi-check2-circle text-primary me-2"></i> Vice-Président(e) chargé des Affaires Internes (VPI)</li>
+                <li class="list-group-item"><i class="bi bi-check2-circle text-primary me-2"></i> Vice-Président(e) chargé des Affaires Externes (VPE)</li>
+                <li class="list-group-item"><i class="bi bi-check2-circle text-primary me-2"></i> Secrétaire Général(e)</li>
+                <li class="list-group-item"><i class="bi bi-check2-circle text-primary me-2"></i> Trésorier(ière)</li>
+                <li class="list-group-item"><i class="bi bi-check2-circle text-primary me-2"></i> Caissier(ière)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-header bg-secondary text-white fw-bold fs-5">
+                <i class="bi bi-diagram-3-fill me-2"></i> Directeurs de Départements
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><i class="bi bi-check2-circle text-secondary me-2"></i> Département de Recherche et Publication</li>
+                <li class="list-group-item"><i class="bi bi-check2-circle text-secondary me-2"></i> Département de Conférence, Séminaire et Débat</li>
+                <li class="list-group-item"><i class="bi bi-check2-circle text-secondary me-2"></i> Département de Génie Médecine</li>
+                <li class="list-group-item"><i class="bi bi-check2-circle text-secondary me-2"></i> Département de Langues (English Medical Club)</li>
+                <li class="list-group-item"><i class="bi bi-check2-circle text-secondary me-2"></i> Département de Revue et Communication</li>
+                <li class="list-group-item"><i class="bi bi-check2-circle text-secondary me-2"></i> Département de Culture</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Critères -->
+    <section id="criteres" class="about section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Critères d'Éligibilité Majeurs</h2>
+        <p>Aperçu des exigences requises pour postuler aux principaux postes</p>
+      </div>
+
+      <div class="container" data-aos="fade-up">
+        <div class="row gy-4">
+          <div class="col-lg-4">
+            <div class="p-4 border rounded bg-white shadow-sm h-100">
+              <h4 class="text-primary"><i class="bi bi-person-badge me-2"></i> Présidence</h4>
+              <ul class="small ps-3">
+                <li>Être membre régulièrement actif.</li>
+                <li>Avoir déjà occupé un poste dans le comité directeur.</li>
+                <li>Deuxième cycle (DOC1, DOC2, DOC3).</li>
+                <li>Moyenne académique > 65%.</li>
+                <li>Compétences en informatique et en anglais.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="p-4 border rounded bg-white shadow-sm h-100">
+              <h4 class="text-primary"><i class="bi bi-people me-2"></i> Vice-Présidences</h4>
+              <ul class="small ps-3">
+                <li>Implication forte au sein du club.</li>
+                <li>Promotions : BAC3, DOC1, DOC2.</li>
+                <li>Moyenne académique > 60%.</li>
+                <li>Capacités de leadership et moralité irréprochable.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="p-4 border rounded bg-white shadow-sm h-100">
+              <h4 class="text-primary"><i class="bi bi-journal-check me-2"></i> Sous-Bureaux</h4>
+              <ul class="small ps-3">
+                <li>Ancienneté d'au moins 2 ans comme membre actif du département cible.</li>
+                <li>Moyenne globale de 60% minimum.</li>
+                <li>Capacité de conduite d'équipes et compétences spécifiques selon le département.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Chronogramme -->
+    <section id="planning" class="services section light-background">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Chronogramme du Processus Électoral 2026</h2>
+        <p>Calendrier officiel établi par la Commission Électorale</p>
+      </div>
+
+      <div class="container" data-aos="fade-up">
+        <div class="table-responsive">
+          <table class="table table-striped table-hover align-middle bg-white shadow-sm rounded">
+            <thead class="table-dark">
+              <tr>
+                <th>Phase</th>
+                <th>Activité</th>
+                <th>Période / Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>01</strong></td>
+                <td>Mise en place de la commission électorale</td>
+                <td>14 Août 2026</td>
+              </tr>
+              <tr>
+                <td><strong>02</strong></td>
+                <td>Lancement de l'appel à candidature (Dépôt)</td>
+                <td>21 - 24 Septembre 2026</td>
+              </tr>
+              <tr>
+                <td><strong>03</strong></td>
+                <td>Fin du dépôt des candidatures</td>
+                <td>24 Septembre 2026</td>
+              </tr>
+              <tr>
+                <td><strong>04</strong></td>
+                <td>Analyse & Publication provisoire des listes</td>
+                <td>25 Septembre 2026</td>
+              </tr>
+              <tr>
+                <td><strong>05</strong></td>
+                <td>Introduction des recours</td>
+                <td>26 Septembre 2026</td>
+              </tr>
+              <tr>
+                <td><strong>06</strong></td>
+                <td>Publication définitive des candidats retenus</td>
+                <td>28 Septembre 2026</td>
+              </tr>
+              <tr class="table-success">
+                <td><strong>07</strong></td>
+                <td>Campagne Électorale & Jour du Scrutin (en ligne)</td>
+                <td>29 - 30 Septembre 2026</td>
+              </tr>
+              <tr>
+                <td><strong>08</strong></td>
+                <td>Résultats définitifs & Investiture</td>
+                <td>Fin Septembre 2026</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  
+  <!-- Footer -->
+  <footer id="footer" class="footer light-background">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">Club Univers Médical <br> Faculté de Médecine <br> Université Officielle de Bukavu</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>RDC / BUKAVU</p>
+            <p>Cliniques Universitaires de Bukavu</p>
+            <p class="mt-3"><strong>Commission Électorale :</strong> <span>club.universmedical@uob.ac.cd</span></p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 footer-links">
+          <h4>Commission Électorale 2026</h4>
+          <ul class="list-unstyled text-muted small">
+            <li>Dr. Gaston MASIMANGO (Président)</li>
+            <li>Dr. Josué AGISHWE (Vice-Président)</li>
+            <li>Dr. Aimé BYANDIKE (Rapporteur)</li>
+            <li>Dr. Ignace KOKO (Membre)</li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-6 text-center text-md-start">
+            <h4>Prêt à vous engager ?</h4>
+            <p>Soumettez votre candidature dès maintenant pour participer à la gestion du CUM.</p>
+            <a href="https://forms.gle/votre-lien-google-form" target="_blank" class="btn btn-success fw-bold px-4 py-2 rounded-pill">
+                <i class="bi bi-pencil-square me-1"></i> POSTULER ICI
+            </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">C.U.M/UOB</strong> <span>All Rights Reserved</span></p>
+    </div>
+  </footer>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>
