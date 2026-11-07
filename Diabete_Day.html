@@ -233,6 +233,36 @@
     font-weight: bold;
     color: #d62828;
 }
+
+/* Signalisation rouge d'urgence */
+#countdown {
+    border: 3px solid #e00000;
+    border-radius: 18px;
+    padding: 15px;
+    animation: urgence 1s infinite;
+}
+
+@keyframes urgence {
+    0%, 100% {
+        border-color: #e00000;
+        box-shadow: 0 0 5px #e00000;
+    }
+
+    50% {
+        border-color: #ff5555;
+        box-shadow: 0 0 18px #ff0000,
+                    0 0 30px rgba(255, 0, 0, 0.5);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #countdown {
+        animation: none;
+        border-color: #e00000;
+        box-shadow: 0 0 8px #e00000;
+    }
+}
+
 </style>
 <section id="hero" class="hero section">
     <img src="CRMSS.png" alt="Zoonoses Banner" class="hero-bg-img">
@@ -269,7 +299,15 @@
     <p>
       Journée scientifique sur le diabète sucré
     </p>
-
+<div style="
+    color: #dc0000;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 12px;
+    animation: urgence 1s infinite;
+">
+    ⚠️ ATTENTION : CLÔTURE IMMINENTE !
+</div>
     <div class="countdown" id="countdown">
 
         <div class="time-box">
@@ -371,27 +409,7 @@ const timer = setInterval(function() {
             <p class="text-muted"> Clôture des inscriptions dans :</p>
               
             
-        <div class="time-box">
-            <span id="days">00</span>
-            <small>Jours</small>
-        </div>
-
-        <div class="time-box">
-            <span id="hours">00</span>
-            <small>Heures</small>
-        </div>
-
-        <div class="time-box">
-            <span id="minutes">00</span>
-            <small>Minutes</small>
-        </div>
-
-        <div class="time-box">
-            <span id="seconds">00</span>
-            <small>Secondes</small>
-        </div>
-
-    </div>
+        <div/>
             <div class="card mb-3 border-left-primary">
               <div class="card-body">
                 <h5 class="card-title text-primary"><i class="bi bi-mortarboard-fill me-2"></i> Étudiants & Médecins Stagiaires</h5>
