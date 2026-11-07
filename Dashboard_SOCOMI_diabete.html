@@ -92,7 +92,7 @@ footer{text-align:center;color:#778;font-size:12px;padding:18px 8px;line-height:
     <div class="chart-area"><canvas id="percentChart"></canvas></div>
   </section>
   <section class="chart-card">
-    <h3>Diagramme de Pareto des inscriptions</h3><p class="subtitle">Catégories classées par effectif décroissant et pourcentage cumulé. Utile pour visualiser la contribution des catégories majoritaires.</p>
+    <h3>Diagramme de Pareto des inscriptions</h3><p class="subtitle">Catégories classées par effectif décroissant et pourcentage cumulé.</p>
     <div class="chart-area"><canvas id="paretoChart"></canvas></div>
   </section>
   <section class="chart-card">
@@ -100,7 +100,7 @@ footer{text-align:center;color:#778;font-size:12px;padding:18px 8px;line-height:
     <div class="chart-area"><canvas id="capacityChart"></canvas></div>
   </section>
   <section class="chart-card">
-    <h3>Indicateur de rythme moyen</h3><p class="subtitle">Moyenne arithmétique calculée sur les quatre jours d'ouverture des inscriptions ; ce graphique ne représente pas les effectifs réels de chaque journée.</p>
+    <h3>Indicateur de rythme moyen</h3><p class="subtitle">Moyenne arithmétique calculée sur les quatre jours d'ouverture des inscriptions.</p>
     <div class="chart-area"><canvas id="averageChart"></canvas></div>
   </section>
 </div>
@@ -130,8 +130,7 @@ footer{text-align:center;color:#778;font-size:12px;padding:18px 8px;line-height:
     <div>
       <h3>Volume relatif à la capacité</h3>
       <div class="capacity-bar"><div class="capacity-fill"></div></div>
-      <p class="note">La barre est volontairement plafonnée visuellement à 100 % de sa longueur ; la valeur réelle est indiquée ci-dessus. Il est recommandé de confirmer la capacité logistique et les modalités de participation.</p>
-    </div>
+         </div>
   </div>
 </section>
 
@@ -149,7 +148,6 @@ footer{text-align:center;color:#778;font-size:12px;padding:18px 8px;line-height:
 <div class="actions"><button onclick="window.print()">Imprimer / Enregistrer en PDF</button></div>
 <footer>
   <strong>SOCOMI / SUD-KIVU — Club Univers Médical</strong><br>
-  Cliniques Universitaires de Bukavu — RDC<br>
   Journée scientifique sur le diabète sucré
 </footer>
 </div>
@@ -237,4 +235,4 @@ new Chart(document.getElementById("averageChart"),{
 });
 </script>
 </body>
-</html>'''
+</html>
