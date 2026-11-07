@@ -178,6 +178,61 @@
         #UOB h2 { font-size: 1.4rem; }
         #titre { font-size: 1.3rem; }
     }
+        ========
+    <style>
+.countdown-container {
+    max-width: 600px;
+    margin: 25px auto;
+    padding: 25px 15px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background: #f4f8fc;
+    border-radius: 15px;
+}
+
+.countdown-container h2 {
+    color: #123b67;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.countdown-container p {
+    color: #555;
+    font-size: 14px;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.time-box {
+    background: #123b67;
+    color: white;
+    padding: 15px 12px;
+    border-radius: 10px;
+    min-width: 75px;
+}
+
+.time-box span {
+    display: block;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.time-box small {
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+#message {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #d62828;
+}
 </style>
 <section id="hero" class="hero section">
     <img src="CRMSS.png" alt="Zoonoses Banner" class="hero-bg-img">
@@ -205,7 +260,91 @@
 </section>  
         
         
-        
+    
+
+<div class="countdown-container">
+
+    <h2>Clôture des inscriptions</h2>
+
+    <p>
+      Journée scientifique sur le diabète sucré
+    </p>
+
+    <div class="countdown" id="countdown">
+
+        <div class="time-box">
+            <span id="days">00</span>
+            <small>Jours</small>
+        </div>
+
+        <div class="time-box">
+            <span id="hours">00</span>
+            <small>Heures</small>
+        </div>
+
+        <div class="time-box">
+            <span id="minutes">00</span>
+            <small>Minutes</small>
+        </div>
+
+        <div class="time-box">
+            <span id="seconds">00</span>
+            <small>Secondes</small>
+        </div>
+
+    </div>
+
+    <div id="message">
+        Ne tardez pas ! Inscrivez-vous maintenant.
+    </div>
+
+</div>
+
+<script>
+
+// MODIFIEZ LA DATE DE CLÔTURE ICI
+// Format : AAAA-MM-JJ T 13:30:00 +02:00
+
+const deadline = new Date("2026-11-XXT13:30:00+02:00").getTime();
+
+const timer = setInterval(function() {
+
+    const now = new Date().getTime();
+    const distance = deadline - now;
+
+    if (distance <= 0) {
+
+        clearInterval(timer);
+
+        document.getElementById("countdown").style.display = "none";
+
+        document.getElementById("message").innerHTML =
+        "Les inscriptions sont officiellement clôturées.";
+
+        return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((distance / (1000 * 60)) % 60);
+    const seconds = Math.floor((distance / 1000) % 60);
+
+    document.getElementById("days").textContent =
+        String(days).padStart(2, "0");
+
+    document.getElementById("hours").textContent =
+        String(hours).padStart(2, "0");
+
+    document.getElementById("minutes").textContent =
+        String(minutes).padStart(2, "0");
+
+    document.getElementById("seconds").textContent =
+        String(seconds).padStart(2, "0");
+
+}, 1000);
+
+</script>
+
         
         
         <section id="about" class="about section">
