@@ -1,6 +1,4 @@
-from pathlib import Path
-
-html = r'''<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
@@ -146,8 +144,6 @@ footer{text-align:center;color:#778;font-size:12px;padding:18px 8px;line-height:
     <li>Les catégories « résidents et généralistes » et « spécialistes et professeurs » réunies représentent 192 personnes, soit 40,2 % des inscrits.</li>
     <li>La moyenne est de 119,5 inscriptions par jour sur quatre jours. Elle ne permet pas de connaître le jour de pic ni l'évolution quotidienne.</li>
   </ul>
-  <p><strong>Limite méthodologique :</strong> les effectifs par journée n'ont pas été fournis. Il est donc impossible de produire une courbe chronologique réelle, d'identifier le jour ayant enregistré le plus d'inscriptions ou de calculer une tendance journalière. Pour ces analyses, il faut disposer du nombre d'inscrits pour chacun des quatre jours.</p>
-  <p><strong>Nature de l'analyse :</strong> statistiques descriptives des inscriptions ; les proportions décrivent la composition des inscrits et ne doivent pas être interprétées comme des taux de participation effective.</p>
 </section>
 
 <div class="actions"><button onclick="window.print()">Imprimer / Enregistrer en PDF</button></div>
@@ -242,7 +238,3 @@ new Chart(document.getElementById("averageChart"),{
 </script>
 </body>
 </html>'''
-
-path = Path("/mnt/data/dashboard_inscriptions_diabete_corrige.html")
-path.write_text(html, encoding="utf-8")
-print(f"Fichier créé : {path}")
