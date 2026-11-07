@@ -1,0 +1,458 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard - Journée scientifique diabète</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    padding: 20px;
+    background: #f2f5f9;
+    font-family: Arial, sans-serif;
+    color: #25364a;
+}
+
+.dashboard {
+    max-width: 1200px;
+    margin: auto;
+}
+
+header {
+    background: linear-gradient(135deg,#102f50,#24618c);
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+    border-radius: 15px;
+}
+
+header h1 { font-size: 25px; }
+header p { line-height: 1.5; }
+
+.brand {
+    color: #ffdddd;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+h2.section {
+    color: #173f68;
+    margin: 30px 0 15px;
+    font-size: 21px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 15px;
+    margin-top: 22px;
+}
+
+.stat {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    border-top: 4px solid #173f68;
+    box-shadow: 0 3px 12px #00000008;
+}
+
+.stat small {
+    color: #68778a;
+    font-weight: bold;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.stat h2 {
+    font-size: 32px;
+    color: #173f68;
+    margin: 12px 0 5px;
+}
+
+.stat p { color: #777; font-size: 12px; }
+
+.charts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.chart-card {
+    background: white;
+    padding: 22px;
+    border-radius: 13px;
+    box-shadow: 0 3px 12px #00000008;
+    min-width: 0;
+}
+
+.chart-card h3 {
+    color: #173f68;
+    font-size: 17px;
+}
+
+.chart-area {
+    height: 340px;
+    position: relative;
+}
+
+.legend {
+    display: grid;
+    gap: 12px;
+    margin-top: 15px;
+    font-size: 13px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    line-height: 1.4;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.table-card {
+    background: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 13px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 450px;
+}
+
+th, td {
+    padding: 15px 12px;
+    text-align: left;
+    border-bottom: 1px solid #e6ebf0;
+    font-size: 13px;
+}
+
+th {
+    color: #173f68;
+    background: #f2f6fa;
+}
+
+.capacity {
+    background: white;
+    border-radius: 13px;
+    padding: 22px;
+    margin-top: 20px;
+}
+
+.capacity h3 { color: #173f68; }
+
+.capacity-bar {
+    height: 17px;
+    background: #e5eaf0;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.capacity-fill {
+    height: 100%;
+    width: 100%;
+    background: #c62828;
+}
+
+.note {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #68778a;
+}
+
+button {
+    border: 0;
+    background: #173f68;
+    color: white;
+    padding: 14px 24px;
+    border-radius: 8px;
+    margin: 25px 0;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    color: #778;
+    font-size: 12px;
+    padding: 15px;
+}
+
+@media(max-width:850px) {
+    .stats { grid-template-columns: repeat(2,1fr); }
+    .charts { grid-template-columns: 1fr; }
+}
+
+@media(max-width:420px) {
+    body { padding: 10px; }
+    .stat { padding: 13px; }
+    .stat h2 { font-size: 25px; }
+    header h1 { font-size: 20px; }
+}
+
+@media print {
+    button { display: none; }
+    body { background: white; }
+    .chart-card,.stat,.capacity,.table-card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+        break-inside: avoid;
+    }
+}
+</style>
+</head>
+
+<body>
+<div class="dashboard">
+
+<header>
+    <p class="brand">CLUB UNIVERS MÉDICAL</p>
+    <h1>TABLEAU DE BORD STATISTIQUE</h1>
+    <h3>Journée scientifique sur le diabète sucré</h3>
+    <p>Analyse descriptive des inscriptions</p>
+</header>
+
+<h2 class="section">01 — Indicateurs clés</h2>
+
+<div class="stats">
+
+    <div class="stat">
+        <small>TOTAL DES INSCRITS</small>
+        <h2>467</h2>
+        <p>Participants enregistrés</p>
+    </div>
+
+    <div class="stat">
+        <small>PLACES ANNONCÉES</small>
+        <h2>100</h2>
+        <p>Capacité annoncée</p>
+    </div>
+
+    <div class="stat" style="border-color:#c62828">
+        <small>PROFESSEURS ET SPÉCIALISTES</small>
+        <h2>15</h2>
+        <p>3,2 % des inscrits</p>
+    </div>
+
+    <div class="stat" style="border-color:#16845b">
+        <small>MÉDECINS RÉSIDENTS, GÉNÉRALISTES ET AUTRES PROFESSIONNELS</small>
+        <h2>170</h2>
+        <p>36,4 % des inscrits</p>
+    </div>
+
+    <div class="stat" style="border-color:#3297c8">
+        <small>MÉDECINS STAGIAIRES ET ÉTUDIANTS</small>
+        <h2>282</h2>
+        <p>60,4 % des inscrits</p>
+    </div>
+
+</div>
+
+<h2 class="section">02 — Représentation graphique</h2>
+
+<div class="charts">
+
+    <div class="chart-card">
+        <h3>Répartition des participants (%)</h3>
+        <div class="chart-area">
+            <canvas id="donutChart"></canvas>
+        </div>
+    </div>
+
+    <div class="chart-card">
+        <h3>Comparaison des effectifs</h3>
+        <div class="chart-area">
+            <canvas id="barChart"></canvas>
+        </div>
+    </div>
+
+</div>
+
+<h2 class="section">03 — Distribution statistique</h2>
+
+<div class="table-card">
+<table>
+<thead>
+<tr>
+    <th>Catégorie</th>
+    <th>Effectif</th>
+    <th>Proportion (%)</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+    <td>Professeurs et spécialistes</td>
+    <td>15</td>
+    <td>3,2 %</td>
+</tr>
+<tr>
+    <td>Médecins résidents, généralistes et autres professionnels de santé</td>
+    <td>170</td>
+    <td>36,4 %</td>
+</tr>
+<tr>
+    <td>Médecins stagiaires et étudiants</td>
+    <td>282</td>
+    <td>60,4 %</td>
+</tr>
+<tr>
+    <th>TOTAL</th>
+    <th>467</th>
+    <th>100 %</th>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h2 class="section">04 — Analyse de la capacité d'accueil</h2>
+
+<div class="capacity">
+    <h3>Inscriptions / Places annoncées</h3>
+
+    <p><strong>467 inscrits</strong> pour 100 places annoncées.</p>
+
+    <div class="capacity-bar">
+        <div class="capacity-fill"></div>
+    </div>
+
+    <p class="note">
+        Le nombre d'inscrits correspond à 467 % du nombre
+        de places annoncées, soit un dépassement de 367
+        inscriptions par rapport à cette capacité.
+        Une vérification de la capacité réelle d'accueil
+        est recommandée.
+    </p>
+</div>
+
+<center>
+<button onclick="window.print()">
+    Imprimer / Enregistrer en PDF
+</button>
+</center>
+
+<footer>
+    Club Univers Médical<br>
+    Journée scientifique sur le diabète sucré
+</footer>
+
+</div>
+
+<script>
+
+// DONNEES
+const labels = [
+    "Professeurs et spécialistes",
+    "Résidents, généralistes et autres professionnels",
+    "Stagiaires et étudiants"
+];
+
+const data = [15, 170, 282];
+
+const colors = ["#C62828", "#16845B", "#3297C8"];
+
+const total = data.reduce((a,b) => a+b,0);
+
+// GRAPHIQUE CIRCULAIRE : 3 CATEGORIES
+new Chart(document.getElementById("donutChart"), {
+    type: "doughnut",
+    data: {
+        labels: labels,
+        datasets: [{
+            data: data,
+            backgroundColor: colors,
+            borderColor: "#ffffff",
+            borderWidth: 4,
+            hoverOffset: 10
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                position: "bottom",
+                labels: {
+                    padding: 15,
+                    usePointStyle: true,
+                    font: {size: 11}
+                }
+            },
+            tooltip: {
+                callbacks: {
+                    label: function(context) {
+                        const value = context.raw;
+                        const percentage = (value/total*100).toFixed(1);
+                        return context.label + ": " + value +
+                            " (" + percentage + " %)";
+                    }
+                }
+            }
+        }
+    }
+});
+
+// GRAPHIQUE EN BARRES : 3 CATEGORIES
+new Chart(document.getElementById("barChart"), {
+    type: "bar",
+    data: {
+        labels: labels,
+        datasets: [{
+            label: "Nombre de participants",
+            data: data,
+            backgroundColor: colors,
+            borderRadius: 7,
+            barThickness: 38
+        }]
+    },
+    options: {
+        indexAxis: "y",
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+            x: {
+                beginAtZero: true,
+                ticks: {precision: 0},
+                title: {
+                    display: true,
+                    text: "Nombre de participants"
+                }
+            },
+            y: {
+                ticks: {
+                    font: {size: 10}
+                }
+            }
+        },
+        plugins: {
+            legend: {display: false},
+            tooltip: {
+                callbacks: {
+                    label: function(context) {
+                        return context.raw + " participants";
+                    }
+                }
+            }
+        }
+    }
+});
+
+</script>
+</body>
+</html>
