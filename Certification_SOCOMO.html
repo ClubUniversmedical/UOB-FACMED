@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Téléchargement des certificats</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f3f6fb;
+  color: #1e293b;
+}
+
+.container {
+  max-width: 520px;
+  margin: 65px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px #00000012;
+}
+
+header { text-align: center; }
+
+.logo {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 23px;
+  color: #173b65;
+}
+
+p {
+  line-height: 1.6;
+  color: #64748b;
+}
+
+label {
+  display: block;
+  margin: 18px 0 8px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+button {
+  width: 100%;
+  margin-top: 16px;
+  padding: 14px;
+  background: #174b80;
+  border: 0;
+  border-radius: 8px;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: .5;
+  cursor: wait;
+}
+
+.hidden { display: none; }
+
+#message {
+  margin-top: 18px;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+footer {
+  margin-top: 28px;
+  text-align: center;
+  font-size: 12px;
+  color: #94a3b8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <header>
+    <div class="logo">🎓</div>
+    <h1>Espace de téléchargement des certificats</h1>
+    <p>
+      Retrouvez votre certificat de participation
+      en quelques secondes.
+    </p>
+  </header>
+
+  <form id="emailForm">
+    <label>Adresse e-mail utilisée lors de l'inscription</label>
+    <input type="email" id="email"
+      placeholder="exemple@email.com" required>
+    <button id="sendBtn">Recevoir mon code</button>
+  </form>
+
+  <form id="verifyForm" class="hidden">
+    <label>Code de vérification reçu par e-mail</label>
+    <input type="text" id="code"
+      placeholder="Code à 6 chiffres"
+      inputmode="numeric" maxlength="6"
+      pattern="[0-9]{6}" required>
+    <button id="verifyBtn">Vérifier et télécharger</button>
+  </form>
+
+  <div id="message" class="hidden" role="status"></div>
+
+  <footer>
+    © 2026 - NOM DE TON ORGANISATION
+    <br>Plateforme officielle des certificats
+  </footer>
+</div>
+
+<script>
+const API_URL = "COLLE_ICI_URL_WEB_APP_APPS_SCRIPT";
+
+const emailForm = document.getElementById("emailForm");
+const verifyForm = document.getElementById("verifyForm");
+const message = document.getElementById("message");
+
+let currentEmail = "";
+
+function showMessage(text, error = false) {
+  message.textContent = text;
+  message.classList.remove("hidden");
+  message.style.background = error ? "#fee2e2" : "#dcfce7";
+  message.style.color = error ? "#991b1b" : "#166534";
+}
+
+function callAPI(action, params = {}) {
+  return new Promise((resolve, reject) => {
+    const callback = "cb_" +
+      Date.now() + "_" + Math.random().toString(36).slice(2);
+
+    const script = document.createElement("script");
+    const query = new URLSearchParams({
+      action,
+      callback,
+      ...params
+    });
+
+    const timer = setTimeout(() => {
+      cleanup();
+      reject(new Error("Délai dépassé. Réessayez."));
+    }, 30000);
+
+    function cleanup() {
+      clearTimeout(timer);
+      delete window[callback];
+      script.remove();
+    }
+
+    window[callback] = data => {
+      cleanup();
+      resolve(data);
+    };
+
+    script.onerror = () => {
+      cleanup();
+      reject(new Error("Impossible de joindre le serveur."));
+    };
+
+    script.src = API_URL + "?" + query.toString();
+    document.body.appendChild(script);
+  });
+}
+
+emailForm.addEventListener("submit", async event => {
+  event.preventDefault();
+
+  const btn = document.getElementById("sendBtn");
+  currentEmail = document.getElementById("email").value.trim();
+
+  btn.disabled = true;
+  btn.textContent = "Envoi en cours...";
+
+  try {
+    const result = await callAPI("request", {
+      email: currentEmail
+    });
+
+    showMessage(result.message, !result.success);
+
+    if (result.success) {
+      verifyForm.classList.remove("hidden");
+    }
+  } catch (error) {
+    showMessage(error.message, true);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = "Recevoir mon code";
+  }
+});
+
+verifyForm.addEventListener("submit", async event => {
+  event.preventDefault();
+
+  const btn = document.getElementById("verifyBtn");
+  const code = document.getElementById("code").value.trim();
+
+  btn.disabled = true;
+  btn.textContent = "Génération du certificat...";
+
+  try {
+    const result = await callAPI("verify", {
+      email: currentEmail,
+      code: code
+    });
+
+    if (!result.success) {
+      showMessage(result.message, true);
+      return;
+    }
+
+    const binary = atob(result.pdf);
+    const bytes = new Uint8Array(binary.length);
+
+    for (let i = 0; i < binary.length; i++) {
+      bytes[i] = binary.charCodeAt(i);
+    }
+
+    const blob = new Blob([bytes], {
+      type: "application/pdf"
+    });
+
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+
+    link.href = url;
+    link.download = result.filename;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+
+    setTimeout(() => URL.revokeObjectURL(url), 60000);
+
+    showMessage("Votre certificat est prêt. Le téléchargement a commencé.");
+
+  } catch (error) {
+    showMessage(error.message, true);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = "Vérifier et télécharger";
+  }
+});
+</script>
+
+</body>
+</html>
