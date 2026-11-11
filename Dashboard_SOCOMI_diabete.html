@@ -8,17 +8,25 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="favicon.jfif" rel="icon">
+<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<link href="assets/css/main.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script>
+  (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);},l=d.createElement(e),l.async=1,l.src=u,n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+  ml('account', '1511836');
+</script>
 <style>
 :root{--navy:#12395d;--blue:#2878a8;--teal:#16845b;--red:#c62828;--gold:#d28b18;--ink:#25364a;--muted:#68778a;--bg:#f2f5f9}
 *{box-sizing:border-box}
-body{margin:0;padding:22px;background:var(--bg);font-family:Roboto,Arial,sans-serif;color:var(--ink)}
-.dashboard{max-width:1250px;margin:auto}
-header{background:linear-gradient(135deg,#102f50,#24618c);color:#fff;text-align:center;padding:34px 20px;border-radius:16px}
-.brand{font-weight:900;letter-spacing:1.5px;color:#e8f3fb;line-height:1.5}
-header h1{font-size:clamp(22px,3vw,30px);margin:12px 0}
-header h3{font-size:18px;font-weight:500;margin:8px 0}
-header p{line-height:1.5;margin:8px 0}
+body{margin:0;padding:0;background:var(--bg);font-family:Roboto,Arial,sans-serif;color:var(--ink)}
+.dashboard{max-width:1294px;margin:auto;padding:22px}
+.dashboard-title{background:linear-gradient(135deg,#102f50,#24618c);color:#fff;text-align:center;padding:34px 20px;border-radius:16px}
+.dashboard-brand{font-weight:900;letter-spacing:1.5px;color:#e8f3fb;line-height:1.5}
+.dashboard-title h1{font-size:clamp(22px,3vw,30px);margin:12px 0;color:#fff}
+.dashboard-title h3{font-size:18px;font-weight:500;margin:8px 0;color:#fff}
+.dashboard-title p{line-height:1.5;margin:8px 0;color:#fff}
 .section{color:var(--navy);font-size:21px;margin:30px 0 14px}
 .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
 .stat,.chart-card,.table-card,.capacity,.method-card{background:#fff;border-radius:13px;padding:20px;box-shadow:0 3px 14px #00000009;min-width:0}
@@ -46,18 +54,45 @@ tfoot th{background:#edf3f8}
 .method-card ul{padding-left:19px;margin:8px 0}
 .method-card li{font-size:12px;color:var(--muted);line-height:1.7}
 .actions{text-align:center}
-button{border:0;background:var(--navy);color:#fff;padding:13px 22px;border-radius:8px;margin:22px 6px 8px;cursor:pointer;font-weight:700}
-button:hover{background:#205780}
-footer{text-align:center;color:#778;font-size:12px;padding:18px 8px;line-height:1.7}
+.dashboard button{border:0;background:var(--navy);color:#fff;padding:13px 22px;border-radius:8px;margin:22px 6px 8px;cursor:pointer;font-weight:700}
+.dashboard button:hover{background:#205780}
+.dashboard-summary{text-align:center;color:#778;font-size:12px;padding:18px 8px;line-height:1.7}
+.ticker-container{width:100%;background-color:#003366;color:#fff;overflow:hidden;box-shadow:0 2px 5px rgba(0,0,0,.2);z-index:996;position:relative;padding:12px 0}
+.ticker-text{display:inline-block;white-space:nowrap;padding-left:100%;animation:tickerScrollDashboard 35s linear infinite}
+@keyframes tickerScrollDashboard{0%{transform:translate3d(0,0,0)}100%{transform:translate3d(-100%,0,0)}}
+.ticker-container:hover .ticker-text{animation-play-state:paused}
 @media(max-width:850px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.charts,.capacity-grid{grid-template-columns:1fr}}
-@media(max-width:480px){body{padding:10px}.stats{grid-template-columns:1fr 1fr}.stat{padding:14px}.stat h2{font-size:25px}.chart-card{padding:15px}.chart-area{height:280px}header{padding:25px 14px}}
-@media print{body{background:#fff;padding:0}.dashboard{max-width:none}.stat,.chart-card,.table-card,.capacity,.method-card{box-shadow:none;border:1px solid #ddd;break-inside:avoid}button{display:none}.charts{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.dashboard{padding:10px}.stats{grid-template-columns:1fr 1fr}.stat{padding:14px}.stat h2{font-size:25px}.chart-card{padding:15px}.chart-area{height:280px}.dashboard-title{padding:25px 14px}}
+@media print{body{background:#fff;padding:0}.dashboard{max-width:none;padding:0}.stat,.chart-card,.table-card,.capacity,.method-card{box-shadow:none;border:1px solid #ddd;break-inside:avoid}.dashboard button,.header,.ticker-container,.footer{display:none!important}.charts{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
+<header id="header" class="header sticky-top">
+  <div class="branding d-flex align-items-center">
+    <div class="container position-relative d-flex align-items-center justify-content-between">
+      <a href="https://clubuniversmedical.github.io/UOB-FACMED/Diabete_Day.html" class="logo d-flex align-items-center me-auto">
+        <h1 class="sitename"><span class="cum"><span class="cum1"><span style="color:firebrick">C</span>lub</span><span class="cum1"><span style="color:firebrick">U</span>nivers</span><span class="cum1"><span style="color:firebrick">M</span>édical</span></span></h1>
+      </a>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="https://clubuniversmedical.github.io/UOB-FACMED/Diabete_Day.html" class="active">Accueil</a></li>
+          <li><a href="https://clubuniversmedical.github.io/UOB-FACMED/Diabete_Day.html#about">À propos</a></li>
+          <li><a href="https://clubuniversmedical.github.io/UOB-FACMED/Diabete_Day.html#services">Programme</a></li>
+          <li><a href="https://clubuniversmedical.github.io/UOB-FACMED/Diabete_Day.html#doctors">Formateurs</a></li>
+          <li><a href="https://clubuniversmedical.github.io/UOB-FACMED/Diabete_Day.html#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+      <a class="cta-btn d-none d-sm-block" onclick="ml('show', '5m2Iru', true)">S'INSCRIRE</a>
+    </div>
+  </div>
+</header>
+<div class="ticker-container" aria-label="Annonce">
+  <div class="ticker-text">✦ 100 PLACES GRATUITES DISPONIBLES • INSCRIPTION OBLIGATOIRE • DEADLINE : SAMEDI 6 NOVEMBRE 2026 ✦</div>
+</div>
 <div class="dashboard">
-<header>
-  <p class="brand">SOCIÉTÉ CONGOLAISE DE MÉDECINE INTERNE<br>SUD-KIVU</p>
+<header class="dashboard-title">
+  <p class="dashboard-brand">SOCIÉTÉ CONGOLAISE DE MÉDECINE INTERNE<br>SUD-KIVU</p>
   <h1>TABLEAU DE BORD STATISTIQUE</h1>
   <h3>Journée scientifique sur le diabète sucré</h3>
   <p>Thème : « Agir tôt contre le diabète »</p>
@@ -79,30 +114,12 @@ footer{text-align:center;color:#778;font-size:12px;padding:18px 8px;line-height:
 
 <h2 class="section">02 — Représentations graphiques</h2>
 <div class="charts">
-  <section class="chart-card">
-    <h3>Composition des inscriptions</h3><p class="subtitle">Diagramme en anneau — proportion de chaque catégorie parmi les 478 inscrits.</p>
-    <div class="chart-area"><canvas id="donutChart"></canvas></div>
-  </section>
-  <section class="chart-card">
-    <h3>Effectifs par catégorie</h3><p class="subtitle">Diagramme en barres — comparaison des nombres absolus.</p>
-    <div class="chart-area"><canvas id="barChart"></canvas></div>
-  </section>
-  <section class="chart-card">
-    <h3>Poids relatif des catégories</h3><p class="subtitle">Comparaison des proportions en pourcentage, sur une même échelle.</p>
-    <div class="chart-area"><canvas id="percentChart"></canvas></div>
-  </section>
-  <section class="chart-card">
-    <h3>Diagramme de Pareto des inscriptions</h3><p class="subtitle">Catégories classées par effectif décroissant et pourcentage cumulé.</p>
-    <div class="chart-area"><canvas id="paretoChart"></canvas></div>
-  </section>
-  <section class="chart-card">
-    <h3>Inscrits et capacité annoncée</h3><p class="subtitle">Comparaison directe entre le volume des inscriptions et les 100 places prévues.</p>
-    <div class="chart-area"><canvas id="capacityChart"></canvas></div>
-  </section>
-  <section class="chart-card">
-    <h3>Indicateur de rythme moyen</h3><p class="subtitle">Moyenne arithmétique calculée sur les quatre jours d'ouverture des inscriptions.</p>
-    <div class="chart-area"><canvas id="averageChart"></canvas></div>
-  </section>
+  <section class="chart-card"><h3>Composition des inscriptions</h3><p class="subtitle">Diagramme en anneau — proportion de chaque catégorie parmi les 478 inscrits.</p><div class="chart-area"><canvas id="donutChart"></canvas></div></section>
+  <section class="chart-card"><h3>Effectifs par catégorie</h3><p class="subtitle">Diagramme en barres — comparaison des nombres absolus.</p><div class="chart-area"><canvas id="barChart"></canvas></div></section>
+  <section class="chart-card"><h3>Poids relatif des catégories</h3><p class="subtitle">Comparaison des proportions en pourcentage, sur une même échelle.</p><div class="chart-area"><canvas id="percentChart"></canvas></div></section>
+  <section class="chart-card"><h3>Diagramme de Pareto des inscriptions</h3><p class="subtitle">Catégories classées par effectif décroissant et pourcentage cumulé.</p><div class="chart-area"><canvas id="paretoChart"></canvas></div></section>
+  <section class="chart-card"><h3>Inscrits et capacité annoncée</h3><p class="subtitle">Comparaison directe entre le volume des inscriptions et les 100 places prévues.</p><div class="chart-area"><canvas id="capacityChart"></canvas></div></section>
+  <section class="chart-card"><h3>Indicateur de rythme moyen</h3><p class="subtitle">Moyenne arithmétique calculée sur les quatre jours d'ouverture des inscriptions.</p><div class="chart-area"><canvas id="averageChart"></canvas></div></section>
 </div>
 
 <h2 class="section">03 — Distribution statistique</h2>
@@ -120,119 +137,63 @@ footer{text-align:center;color:#778;font-size:12px;padding:18px 8px;line-height:
 </div>
 
 <h2 class="section">04 — Analyse de la capacité d'accueil</h2>
-<section class="capacity">
-  <div class="capacity-grid">
-    <div>
-      <h3>Inscriptions par rapport aux places annoncées</h3>
-      <div class="capacity-number">478 inscrits / 100 places</div>
-      <p class="note">Le volume d'inscriptions représente 478 % de la capacité annoncée. L'excédent est de 378 inscriptions, soit un dépassement de 378 % par rapport aux 100 places initiales.</p>
-    </div>
-    <div>
-      <h3>Volume relatif à la capacité</h3>
-      <div class="capacity-bar"><div class="capacity-fill"></div></div>
-         </div>
-  </div>
-</section>
+<section class="capacity"><div class="capacity-grid"><div><h3>Inscriptions par rapport aux places annoncées</h3><div class="capacity-number">478 inscrits / 100 places</div><p class="note">Le volume d'inscriptions représente 478 % de la capacité annoncée. L'excédent est de 378 inscriptions, soit un dépassement de 378 % par rapport aux 100 places initiales.</p></div><div><h3>Volume relatif à la capacité</h3><div class="capacity-bar"><div class="capacity-fill"></div></div></div></div></section>
 
 <h2 class="section">05 — Interprétation et limites</h2>
-<section class="method-card">
-  <h3>Principaux constats</h3>
-  <ul>
-    <li>Les étudiants constituent la catégorie la plus représentée (59,8 %), suivis des médecins résidents et généralistes (37,0 %).</li>
-    <li>Les spécialistes et professeurs représentent 3,1 % des inscriptions.</li>
-    <li>Les catégories « résidents et généralistes » et « spécialistes et professeurs » réunies représentent 192 personnes, soit 40,2 % des inscrits.</li>
-    <li>La moyenne est de 119,5 inscriptions par jour sur quatre jours. Elle ne permet pas de connaître le jour de pic ni l'évolution quotidienne.</li>
-  </ul>
-</section>
+<section class="method-card"><h3>Principaux constats</h3><ul>
+<li>Les étudiants constituent la catégorie la plus représentée (59,8 %), suivis des médecins résidents et généralistes (37,0 %).</li>
+<li>Les spécialistes et professeurs représentent 3,1 % des inscriptions.</li>
+<li>Les catégories « résidents et généralistes » et « spécialistes et professeurs » réunies représentent 192 personnes, soit 40,2 % des inscrits.</li>
+<li>La moyenne est de 119,5 inscriptions par jour sur quatre jours. Elle ne permet pas de connaître le jour de pic ni l'évolution quotidienne.</li>
+</ul></section>
 
 <div class="actions"><button onclick="window.print()">Imprimer / Enregistrer en PDF</button></div>
-<footer>
-  <strong>SOCOMI / SUD-KIVU — Club Univers Médical</strong><br>
-  Journée scientifique sur le diabète sucré
-</footer>
+<footer class="dashboard-summary"><strong>SOCOMI / SUD-KIVU — Club Univers Médical</strong><br>Journée scientifique sur le diabète sucré</footer>
 </div>
 
+<footer id="footer" class="footer light-background">
+  <div class="container footer-top"><div class="row gy-4">
+    <div class="col-lg-4 col-md-6 footer-about">
+      <strong><h2><span id="su">SO</span><span id="so">CO</span><span id="sb">MI</span>/SUD-KIVU<br></h2></strong>
+      <a href="index.html" class="logo d-flex align-items-center"><span class="sitename">Club Univers Médical</span></a>
+      <div class="footer-contact pt-3"><p>RDC/BUKAVU</p><p>Cliniques Universitaires de Bukavu</p><p class="mt-3"><strong>Phone:</strong> <span>+243996991891</span></p><p><strong>Email:</strong> <span>Clubuniversmedical@uob.ac.cd</span></p></div>
+      <div class="social-links d-flex mt-4">
+        <a href="https://x.com/CumMedical/status/1593155932686790656"><i class="bi bi-twitter-x"></i></a>
+        <a href="https://www.facebook.com/people/Club-Univers-M%C3%A9dical-CUMUOB/100069585457841/"><i class="bi bi-facebook"></i></a>
+        <a href="https://api.whatsapp.com/send/?phone=243996 991 891&amp;text=Bonjour%2FBonsoir%2C%20%0AJ'aimerais%20avoir%20*plus%20d'informations*%20concernant%20la%20formation%20en%20recherche"><i class="bi bi-whatsapp"></i></a>
+        <a href="https://cd.linkedin.com/in/daniel-kakusu-b3510a175/en"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+    <div class="col-lg-2 col-md-3 footer-links"><h4>A propos</h4><ul>
+      <li><a href="https://clubuniversmedical.blogspot.com/p/acceuil.html">Accueil</a></li><li><a href="https://clubuniversmedical.blogspot.com/p/a-propos.html">About us</a></li><li><a href="https://clubuniversmedical.blogspot.com/p/a-propos.html">Services</a></li><li><a href="https://clubuniversmedical.blogspot.com/p/a-propos.html">Nos departements</a></li><li><a href="https://clubuniversmedical.blogspot.com/p/a-propos.html">Privacy policy</a></li>
+    </ul></div>
+    <div class="col-lg-2 col-md-3 footer-links"><h4>Nos départements</h4><ul>
+      <li><a href="https://clubuniversmedical.blogspot.com/p/departement-de-recherches-scientifiques.html">Recherche Scientifique</a></li><li><a href="https://clubuniversmedical.blogspot.com/p/club-univers-medical.html">Conférence Sem. et Débats</a></li><li><a href="https://clubuniversmedical.blogspot.com/p/departement-de-culture.html">Cultures</a></li><li><a href="https://clubuniversmedical.blogspot.com/p/departement-de-langues.html">Langues</a></li><li><a href="https://clubuniversmedical.blogspot.com/p/departement-de-revue-et-communication.html">Revues et Communications</a></li><li><a href="https://clubuniversmedical.blogspot.com/p/departement-de-genie-medecine.html">Génie Médecine</a></li>
+    </ul></div>
+  </div></div>
+  <div class="container copyright text-center mt-4"><p>© <span>Copyright</span> <strong class="px-1 sitename">C.U.M/UOB</strong> <span>All Rights Reserved</span></p><div class="credits">Designed by <a href="https://clubuniversmedical.blogspot.com/p/a-propos.html">C.U.M/UOB</a></div></div>
+</footer>
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<div id="preloader"></div>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/js/main.js"></script>
 <script>
-const categories = [
-  "Étudiants",
-  "Résidents et généralistes",
-  "Spécialistes et professeurs"
-];
-const counts = [286, 177, 15];
-const colors = ["#2878a8", "#16845b", "#c62828"];
-const total = counts.reduce((sum, value) => sum + value, 0);
-const capacity = 100;
-const pct = counts.map(v => +(v / total * 100).toFixed(1));
-const commonFont = {family:"Roboto, Arial, sans-serif"};
-const tooltipPercent = {
-  callbacks:{
-    label(ctx){
-      const value = ctx.raw;
-      const p = (value / total * 100).toFixed(1).replace(".", ",");
-      return `${ctx.label}: ${value} (${p} %)`;
-    }
-  }
-};
-
-new Chart(document.getElementById("donutChart"),{
-  type:"doughnut",
-  data:{labels:categories,datasets:[{data:counts,backgroundColor:colors,borderColor:"#fff",borderWidth:3,hoverOffset:8}]},
-  options:{responsive:true,maintainAspectRatio:false,plugins:{
-    legend:{position:"bottom",labels:{padding:14,usePointStyle:true,font:{...commonFont,size:11}}},
-    tooltip:tooltipPercent
-  },cutout:"58%"}
-});
-
-new Chart(document.getElementById("barChart"),{
-  type:"bar",
-  data:{labels:categories,datasets:[{label:"Effectif",data:counts,backgroundColor:colors,borderRadius:6}]},
-  options:{indexAxis:"y",responsive:true,maintainAspectRatio:false,
-    scales:{x:{beginAtZero:true,ticks:{precision:0},title:{display:true,text:"Nombre d'inscrits"}},
-      y:{ticks:{font:{...commonFont,size:11}}}},
-    plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>`${ctx.raw} inscrits`}}}}
-});
-
-new Chart(document.getElementById("percentChart"),{
-  type:"bar",
-  data:{labels:categories,datasets:[{label:"Proportion (%)",data:pct,backgroundColor:colors,borderRadius:6}]},
-  options:{indexAxis:"y",responsive:true,maintainAspectRatio:false,
-    scales:{x:{beginAtZero:true,max:100,title:{display:true,text:"Pourcentage (%)"},ticks:{callback:v=>v+" %"}},
-      y:{ticks:{font:{...commonFont,size:11}}}},
-    plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>`${ctx.raw.toFixed(1).replace(".",",")} %`}}}}
-});
-
-const paretoOrder = [0,1,2];
-const paretoLabels = paretoOrder.map(i=>categories[i]);
-const paretoCounts = paretoOrder.map(i=>counts[i]);
-let running = 0;
-const cumulative = paretoCounts.map(v=>{running += v; return +(running/total*100).toFixed(1);});
-new Chart(document.getElementById("paretoChart"),{
-  data:{labels:paretoLabels,datasets:[
-    {type:"bar",label:"Effectif",data:paretoCounts,backgroundColor:["#2878a8","#16845b","#c62828"],yAxisID:"y",order:2},
-    {type:"line",label:"Pourcentage cumulé",data:cumulative,borderColor:"#d28b18",backgroundColor:"#d28b18",pointRadius:5,tension:0,yAxisID:"y1",order:1}
-  ]},
-  options:{responsive:true,maintainAspectRatio:false,
-    scales:{y:{beginAtZero:true,title:{display:true,text:"Effectif"}},
-      y1:{position:"right",beginAtZero:true,min:0,max:100,title:{display:true,text:"Cumul (%)"},ticks:{callback:v=>v+" %"},grid:{drawOnChartArea:false}},
-      x:{ticks:{font:{...commonFont,size:10}}}},
-    plugins:{tooltip:{callbacks:{label:ctx=>ctx.datasetIndex===0?`Effectif : ${ctx.raw}`:`Cumul : ${ctx.raw.toFixed(1)} %`}}}}
-});
-
-new Chart(document.getElementById("capacityChart"),{
-  type:"bar",
-  data:{labels:["Places annoncées","Inscriptions"],datasets:[{label:"Effectif",data:[capacity,total],backgroundColor:["#d28b18","#c62828"],borderRadius:6}]},
-  options:{responsive:true,maintainAspectRatio:false,
-    scales:{y:{beginAtZero:true,ticks:{precision:0},title:{display:true,text:"Nombre de personnes"}}},
-    plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>`${ctx.raw} personnes`}}}}
-});
-
-new Chart(document.getElementById("averageChart"),{
-  type:"bar",
-  data:{labels:["Moyenne quotidienne (4 jours)"],datasets:[{label:"Inscriptions moyennes / jour",data:[total/4],backgroundColor:"#2878a8",borderRadius:7}]},
-  options:{responsive:true,maintainAspectRatio:false,
-    scales:{y:{beginAtZero:true,title:{display:true,text:"Nombre moyen d'inscriptions / jour"},ticks:{precision:0}}},
-    plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>`${ctx.raw.toFixed(1).replace(".",",")} inscriptions / jour en moyenne`}}}}
-});
+const categories=["Étudiants","Résidents et généralistes","Spécialistes et professeurs"];
+const counts=[286,177,15];
+const colors=["#2878a8","#16845b","#c62828"];
+const total=counts.reduce((sum,value)=>sum+value,0);
+const capacity=100;
+const pct=counts.map(v=>+(v/total*100).toFixed(1));
+const commonFont={family:"Roboto, Arial, sans-serif"};
+const tooltipPercent={callbacks:{label(ctx){const value=ctx.raw;const p=(value/total*100).toFixed(1).replace(".",",");return `${ctx.label}: ${value} (${p} %)`;}}};
+new Chart(document.getElementById("donutChart"),{type:"doughnut",data:{labels:categories,datasets:[{data:counts,backgroundColor:colors,borderColor:"#fff",borderWidth:3,hoverOffset:8}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:"bottom",labels:{padding:14,usePointStyle:true,font:{...commonFont,size:11}}},tooltip:tooltipPercent},cutout:"58%"}});
+new Chart(document.getElementById("barChart"),{type:"bar",data:{labels:categories,datasets:[{label:"Effectif",data:counts,backgroundColor:colors,borderRadius:6}]},options:{indexAxis:"y",responsive:true,maintainAspectRatio:false,scales:{x:{beginAtZero:true,ticks:{precision:0},title:{display:true,text:"Nombre d'inscrits"}},y:{ticks:{font:{...commonFont,size:11}}}},plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>`${ctx.raw} inscrits`}}}}});
+new Chart(document.getElementById("percentChart"),{type:"bar",data:{labels:categories,datasets:[{label:"Proportion (%)",data:pct,backgroundColor:colors,borderRadius:6}]},options:{indexAxis:"y",responsive:true,maintainAspectRatio:false,scales:{x:{beginAtZero:true,max:100,title:{display:true,text:"Pourcentage (%)"},ticks:{callback:v=>v+" %"}},y:{ticks:{font:{...commonFont,size:11}}}},plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>`${ctx.raw.toFixed(1).replace(".",",")} %`}}}}});
+const paretoOrder=[0,1,2];const paretoLabels=paretoOrder.map(i=>categories[i]);const paretoCounts=paretoOrder.map(i=>counts[i]);let running=0;const cumulative=paretoCounts.map(v=>{running+=v;return +(running/total*100).toFixed(1);});
+new Chart(document.getElementById("paretoChart"),{data:{labels:paretoLabels,datasets:[{type:"bar",label:"Effectif",data:paretoCounts,backgroundColor:["#2878a8","#16845b","#c62828"],yAxisID:"y",order:2},{type:"line",label:"Pourcentage cumulé",data:cumulative,borderColor:"#d28b18",backgroundColor:"#d28b18",pointRadius:5,tension:0,yAxisID:"y1",order:1}]},options:{responsive:true,maintainAspectRatio:false,scales:{y:{beginAtZero:true,title:{display:true,text:"Effectif"}},y1:{position:"right",beginAtZero:true,min:0,max:100,title:{display:true,text:"Cumul (%)"},ticks:{callback:v=>v+" %"},grid:{drawOnChartArea:false}},x:{ticks:{font:{...commonFont,size:10}}}},plugins:{tooltip:{callbacks:{label:ctx=>ctx.datasetIndex===0?`Effectif : ${ctx.raw}`:`Cumul : ${ctx.raw.toFixed(1)} %`}}}}});
+new Chart(document.getElementById("capacityChart"),{type:"bar",data:{labels:["Places annoncées","Inscriptions"],datasets:[{label:"Effectif",data:[capacity,total],backgroundColor:["#d28b18","#c62828"],borderRadius:6}]},options:{responsive:true,maintainAspectRatio:false,scales:{y:{beginAtZero:true,ticks:{precision:0},title:{display:true,text:"Nombre de personnes"}}},plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>`${ctx.raw} personnes`}}}}});
+new Chart(document.getElementById("averageChart"),{type:"bar",data:{labels:["Moyenne quotidienne (4 jours)"],datasets:[{label:"Inscriptions moyennes / jour",data:[total/4],backgroundColor:"#2878a8",borderRadius:7}]},options:{responsive:true,maintainAspectRatio:false,scales:{y:{beginAtZero:true,title:{display:true,text:"Nombre moyen d'inscriptions / jour"},ticks:{precision:0}}},plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>`${ctx.raw.toFixed(1).replace(".",",")} inscriptions / jour en moyenne`}}}}});
 </script>
 </body>
 </html>
