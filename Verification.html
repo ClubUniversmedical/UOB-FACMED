@@ -88,7 +88,7 @@
     <main class="main">
    
 <!-- ================================================================================= -->
-<!-- SECTION D'AUTHENTIFICATION DES CERTIFICATS (AJOUTÉE AVANT LE PROGRAMME) -->
+<!-- SECTION D'AUTHENTIFICATION DES CERTIFICATS -->
 <!-- ================================================================================= -->
 <section id="auth-certificat" class="section light-background py-5">
   <div class="container" data-aos="fade-up">
@@ -102,51 +102,45 @@
       <div class="col-lg-6">
         <div class="input-group shadow-sm">
           <span class="input-group-text bg-primary text-white"><i class="bi bi-search"></i></span>
-          <input type="text" id="searchInput" class="form-control" placeholder="Rechercher par nom, prénom ou ID de certificat..." onkeyup="filtrerCertificats()">
+          <input type="text" id="searchInput" class="form-control" placeholder="Rechercher par nom ou ID de certificat..." onkeyup="filtrerCertificats()">
         </div>
       </div>
     </div>
 
-    <!-- Tableau d'authentification -->
+    <!-- Tableau d'authentification (sans la colonne Catégorie) -->
     <div class="table-responsive shadow-sm bg-white rounded p-3">
       <table class="table table-hover align-middle mb-0" id="tableCertificats">
         <thead class="table-dark">
           <tr>
-            <th style="width: 20%;">ID Certificat</th>
-            <th style="width: 45%;">Nom & Prénom du Participant</th>
-            <th style="width: 25%;">Catégorie</th>
-            <th style="width: 10%; text-align: center;">Statut</th>
+            <th style="width: 30%;">ID Certificat</th>
+            <th style="width: 55%;">Nom & Prénom du Participant</th>
+            <th style="width: 15%; text-align: center;">Statut</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td><strong>CUM-DIAB-2026-001</strong></td>
             <td>Kakusu Lionel</td>
-            <td>Étudiant en Médecine</td>
             <td class="text-center"><span class="badge bg-success">Authentique</span></td>
           </tr>
           <tr>
             <td><strong>CUM-DIAB-2026-002</strong></td>
             <td>Nabintu Aimérance</td>
-            <td>Médecin / Intervenant</td>
             <td class="text-center"><span class="badge bg-success">Authentique</span></td>
           </tr>
           <tr>
             <td><strong>CUM-DIAB-2026-003</strong></td>
             <td>Birato Yanick</td>
-            <td>Médecin Praticien</td>
             <td class="text-center"><span class="badge bg-success">Authentique</span></td>
           </tr>
           <tr>
             <td><strong>CUM-DIAB-2026-004</strong></td>
             <td>Mungwete Josué</td>
-            <td>Médecin Stagiaire</td>
             <td class="text-center"><span class="badge bg-success">Authentique</span></td>
           </tr>
           <tr>
             <td><strong>CUM-DIAB-2026-005</strong></td>
             <td>Byabene Aline</td>
-            <td>Chef de Travaux / Intervenant</td>
             <td class="text-center"><span class="badge bg-success">Authentique</span></td>
           </tr>
         </tbody>
@@ -155,7 +149,7 @@
   </div>
 </section>
 
-<!-- Script JavaScript pour la recherche dynamique dans le tableau -->
+<!-- Script JavaScript mis à jour pour filtrer sans la colonne Catégorie -->
 <script>
 function filtrerCertificats() {
   let input = document.getElementById('searchInput');
@@ -166,16 +160,13 @@ function filtrerCertificats() {
   for (let i = 1; i < tr.length; i++) {
     let tdId = tr[i].getElementsByTagName('td')[0];
     let tdNom = tr[i].getElementsByTagName('td')[1];
-    let tdCat = tr[i].getElementsByTagName('td')[2];
     
-    if (tdId || tdNom || tdCat) {
+    if (tdId || tdNom) {
       let txtId = tdId.textContent || tdId.innerText;
       let txtNom = tdNom.textContent || tdNom.innerText;
-      let txtCat = tdCat.textContent || tdCat.innerText;
       
       if (txtId.toLowerCase().indexOf(filter) > -1 || 
-          txtNom.toLowerCase().indexOf(filter) > -1 || 
-          txtCat.toLowerCase().indexOf(filter) > -1) {
+          txtNom.toLowerCase().indexOf(filter) > -1) {
         tr[i].style.display = "";
       } else {
         tr[i].style.display = "none";
