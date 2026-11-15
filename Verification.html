@@ -1,1 +1,631 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>CUM - Conférence Diabète</title>
+    <meta content="THEME : « Agir tôt contre le diabète » (Early action on diabetes) »" name="description"> 
+    <meta content="Diabete, santé humaine, Bukavu, CUM, formation médicale" name="keywords">
+  
+    <link href="favicon.jfif" rel="icon">
+    <link href="favicon.jfif" rel="apple-touch-icon">
+  
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  
+    <link href="assets/css/main.css" rel="stylesheet">
+  
 
+   <!-- MailerLite Universal -->
+<script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '1511836');
+</script>
+<!-- End MailerLite Universal --> 
+</head>
+<body>
+    <header id="header" class="header sticky-top">
+        <div class="branding d-flex align-items-center">
+          <div class="container position-relative d-flex align-items-center justify-content-between">
+            <a href="https://clubuniversmedical.github.io/UOB-FACMED/Diabete_Day.html" class="logo d-flex align-items-center me-auto">
+              <h1 class="sitename">
+                <div class="cum">
+                  <div class="cum1"><span style="color: firebrick;">C</span>lub</div>
+                  <div class="cum1"><span style="color: firebrick;">U</span>nivers</div>
+                  <div class="cum1"><span style="color: firebrick;">M</span>édical</div>
+                </div>
+              </h1>
+            </a>
+    
+            <nav id="navmenu" class="navmenu">
+              <ul>
+                <li><a href="https://clubuniversmedical.github.io/UOB-FACMED/Diabete_Day.html" class="active">Accueil<br></a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#auth-certificat">Authentification</a></li>
+                <li><a href="#services">Programme</a></li>
+                <li><a href="#doctors">Formateurs</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+              <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+    
+            <a class="cta-btn d-none d-sm-block" onclick="ml('show', '5m2Iru', true)">S'INSCRIRE</a>
+          </div>
+        </div>
+    </header>
+    <!-- ================================================================================= -->
+<!-- DEBUT DE LA BANDE PASSANTE DEFILANTE -->
+<!-- ================================================================================= -->
+<div class="bande-passante-container" style="width: 100%; background-color: #003366; color: #ffffff; overflow: hidden; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); z-index: 996; position: relative; padding: 10px 0; font-family: 'Poppins', sans-serif; font-weight: 600; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;">
+    <div class="bande-passante-texte" style="display: inline-block; white-space: nowrap; padding-left: 100%; animation: defilementBande 35s linear infinite;">
+      ✦ 100 PLACES GRATUITES DISPONIBLES • INSCRIPTION OBLIGATOIRE • DEADLINE : SAMEDI 6 NOVEMBRE 2026✦
+    </div>
+</div>
+
+<style>
+@keyframes defilementBande {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-100%, 0, 0); }
+}
+.bande-passante-container:hover .bande-passante-texte {
+    animation-play-state: paused;
+}
+</style>
+<!-- ================================================================================= -->
+<!-- FIN DE LA BANDE PASSANTE DEFILANTE -->
+<!-- ================================================================================= -->
+    <main class="main">
+   
+<!-- ================================================================================= -->
+<!-- SECTION D'AUTHENTIFICATION DES CERTIFICATS (AJOUTÉE AVANT LE PROGRAMME) -->
+<!-- ================================================================================= -->
+<section id="auth-certificat" class="section light-background py-5">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title text-center mb-4">
+      <h2>Vérification et Authentification des Certificats</h2>
+      <p>Consultez la liste officielle des participants certifiés ou recherchez un nom / ID de certificat.</p>
+    </div>
+
+    <!-- Barre de recherche interactive -->
+    <div class="row justify-content-center mb-4">
+      <div class="col-lg-6">
+        <div class="input-group shadow-sm">
+          <span class="input-group-text bg-primary text-white"><i class="bi bi-search"></i></span>
+          <input type="text" id="searchInput" class="form-control" placeholder="Rechercher par nom, prénom ou ID de certificat..." onkeyup="filtrerCertificats()">
+        </div>
+      </div>
+    </div>
+
+    <!-- Tableau d'authentification -->
+    <div class="table-responsive shadow-sm bg-white rounded p-3">
+      <table class="table table-hover align-middle mb-0" id="tableCertificats">
+        <thead class="table-dark">
+          <tr>
+            <th style="width: 20%;">ID Certificat</th>
+            <th style="width: 45%;">Nom & Prénom du Participant</th>
+            <th style="width: 25%;">Catégorie</th>
+            <th style="width: 10%; text-align: center;">Statut</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>CUM-DIAB-2026-001</strong></td>
+            <td>Kakusu Lionel</td>
+            <td>Étudiant en Médecine</td>
+            <td class="text-center"><span class="badge bg-success">Authentique</span></td>
+          </tr>
+          <tr>
+            <td><strong>CUM-DIAB-2026-002</strong></td>
+            <td>Nabintu Aimérance</td>
+            <td>Médecin / Intervenant</td>
+            <td class="text-center"><span class="badge bg-success">Authentique</span></td>
+          </tr>
+          <tr>
+            <td><strong>CUM-DIAB-2026-003</strong></td>
+            <td>Birato Yanick</td>
+            <td>Médecin Praticien</td>
+            <td class="text-center"><span class="badge bg-success">Authentique</span></td>
+          </tr>
+          <tr>
+            <td><strong>CUM-DIAB-2026-004</strong></td>
+            <td>Mungwete Josué</td>
+            <td>Médecin Stagiaire</td>
+            <td class="text-center"><span class="badge bg-success">Authentique</span></td>
+          </tr>
+          <tr>
+            <td><strong>CUM-DIAB-2026-005</strong></td>
+            <td>Byabene Aline</td>
+            <td>Chef de Travaux / Intervenant</td>
+            <td class="text-center"><span class="badge bg-success">Authentique</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Script JavaScript pour la recherche dynamique dans le tableau -->
+<script>
+function filtrerCertificats() {
+  let input = document.getElementById('searchInput');
+  let filter = input.value.toLowerCase();
+  let table = document.getElementById('tableCertificats');
+  let tr = table.getElementsByTagName('tr');
+
+  for (let i = 1; i < tr.length; i++) {
+    let tdId = tr[i].getElementsByTagName('td')[0];
+    let tdNom = tr[i].getElementsByTagName('td')[1];
+    let tdCat = tr[i].getElementsByTagName('td')[2];
+    
+    if (tdId || tdNom || tdCat) {
+      let txtId = tdId.textContent || tdId.innerText;
+      let txtNom = tdNom.textContent || tdNom.innerText;
+      let txtCat = tdCat.textContent || tdCat.innerText;
+      
+      if (txtId.toLowerCase().indexOf(filter) > -1 || 
+          txtNom.toLowerCase().indexOf(filter) > -1 || 
+          txtCat.toLowerCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
+<!-- ================================================================================= -->
+<!-- FIN DE LA SECTION D'AUTHENTIFICATION -->
+<!-- ================================================================================= -->
+
+<section id="services" class="services section light-background">
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Programme Détaillé (Chronologique)</h2>
+    <p>Découvrez le déroulement des activités scientifiques de 12h00 à 17h00 à l'Hôtel Elizabeth</p>
+  </div>
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered align-middle bg-white">
+        <thead class="table-dark">
+          <tr>
+            <th style="width: 20%;">Horaire</th>
+            <th style="width: 80%;">Intervenant & Thématique / Activité</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Catégorie 1 -->
+          <tr class="table-primary fw-bold text-uppercase">
+            <td colspan="2">1. Épidémiologie et Diagnostic (Vue d'ensemble)</td>
+          </tr>
+          <tr>
+            <td><strong>12h00 - 12h15</strong></td>
+            <td><strong>Dr Aimérance Nabintu </strong><br><span class="text-muted">Epidémiologie du Diabète sucré en 2026</span></td>
+          </tr>
+          <tr>
+            <td><strong>12h15 - 12h35</strong></td>
+            <td><strong>Prof. Antoine Sadiki</strong><br><span class="text-muted">Marqueurs biologiques du diagnostic du diabète sucré : Forces et limites.</span></td>
+          </tr>
+          <tr>
+            <td><strong>12h35 - 13h00</strong></td>
+            <td><strong>Prof. Philippe Katchunga </strong><br><span class="text-muted">Diagnostic du Diabète sucré. Syndrome métabolique
+cardiovasculaire et rénal : Nouveau concept, physiopathologie et
+prise en charge.</span></td>
+          </tr>
+
+          <!-- Catégorie 2 -->
+          <tr class="table-primary fw-bold text-uppercase">
+            <td colspan="2">2. Stratégies Thérapeutiques et Pharmacologie</td>
+          </tr>
+          <tr>
+            <td><strong>13h00 - 13h20</strong></td>
+            <td><strong>Dr. Roland Lwandiko</strong><br><span class="text-muted">Prise en charge du diabète sucré : Les antidiabétiques en 2026.</span></td>
+          </tr>
+          <tr>
+            <td><strong>13h20 - 13h40</strong></td>
+            <td><strong>Dr. Yanick Birato </strong><br><span class="text-muted">Les gliflozines dans la prise en charge des maladies cardiovasculaires.</span></td>
+          </tr>
+          <tr>
+            <td><strong>13h40 - 14h00</strong></td>
+            <td><strong>Prof Justin Cikomola </strong><br><span class="text-muted">Utilisation des agonistes des récepteurs de GLP-1 dans le traitement de l’obésité.</span></td>
+          </tr>
+
+          <!-- Catégorie 3 -->
+          <tr class="table-primary fw-bold text-uppercase">
+            <td colspan="2">3. Complications et Atteintes d’Organes Cibles</td>
+          </tr>
+          <tr>
+            <td><strong>14h00 - 14h15</strong></td>
+            <td><strong>Prof Dieudonné Bihehe </strong><br><span class="text-muted">Diabète sucré et Vitamine D.</span></td>
+          </tr>
+          <tr>
+            <td><strong>14h15 - 14h35</strong></td>
+            <td><strong>Prof Charles Kangitsi </strong><br><span class="text-muted">Prise en charge actualisée de la Néphropathie diabétique en Afrique sub-saharienne.</span></td>
+          </tr>
+          <tr>
+            <td><strong>14h35 - 14h50</strong></td>
+            <td><strong>Prof Tony Shindano </strong><br><span class="text-muted">Diabète sucré et atteintes hépatiques.</span></td>
+          </tr>
+          <tr>
+            <td><strong>14h50 - 15h05</strong></td>
+            <td><strong>Prof Parvine Basimane </strong><br><span class="text-muted">Hépatites virales chroniques B et C et diabète sucré : de l'inflammation chronique à l'insulinorésistance.</span></td>
+          </tr>
+          <tr>
+            <td><strong>15h05 - 15h20</strong></td>
+            <td><strong>Dr Josué Mungwete </strong><br><span class="text-muted">Stéatose hépatique non alcoolique et diabète.</span></td>
+          </tr>
+          <tr>
+            <td><strong>15h20 - 15h35</strong></td>
+            <td><strong>Dr Amani Busane</strong><br><span class="text-muted">Determinants de la dépression chez les diabétiques suivis à l'hôpital Général de Référence de Panzi</span></td>
+          </tr>
+          <tr>
+            <td><strong>15h35 - 15h55</strong></td>
+            <td><strong>Dr Tinsley Kibonge </strong><br><span class="text-muted">Prise en charge chirurgicale du pied diabétique : leçons du passé, défis d'aujourd'hui et perspectives d'avenir.</span></td>
+          </tr>
+          <tr>
+            <td><strong>15h55 - 16h15</strong></td>
+            <td><strong>CT Dr Georges Kikuni Besulani </strong><br><span class="text-muted">Diabète sucré et risque cardiovasculaire: de la physiopathologie à la cardioprotection</span></td>
+          </tr>
+
+          <!-- Catégorie 4 -->
+          <tr class="table-primary fw-bold text-uppercase">
+            <td colspan="2">4. Populations Particulières et Situations Cliniques Spécifiques</td>
+          </tr>
+          <tr>
+            <td><strong>16h15 - 16h30</strong></td>
+            <td><strong>Prof Archippe Birindwa</strong><br><span class="text-muted">Traitement du diabète sucré chez les enfants et les adolescents.</span></td>
+          </tr>
+          <tr>
+            <td><strong>16h30 - 16h45</strong></td>
+            <td><strong>Dr Jean-Misel Selemani </strong><br><span class="text-muted">Diabète sucré et grossesse.</span></td>
+          </tr>
+          <tr>
+            <td><strong>16h45 - 17h00</strong></td>
+            <td><strong>Dr Aline Byabene</strong><br><span class="text-muted">Les pathologies infectieuses et diabète sucré.</span></td>
+          </tr>
+          <tr>
+            <td><strong>17h00 - 17h15</strong></td>
+            <td><strong>Dr Abedi Zalufa</strong><br><span class="text-muted">Diabète sucré et cancer</span></td>
+          </tr>
+
+          <!-- Catégorie 5 -->
+          <tr class="table-primary fw-bold text-uppercase">
+            <td colspan="2">5. Partenariats et Clôture</td>
+          </tr>
+          <tr>
+            <td><strong>17h15 - 17h35</strong></td>
+            <td><strong>Firmes pharmaceutiques partenaires</strong><br><span class="text-muted">Espace d'exposition et communications partenaires</span></td>
+          </tr>
+          <tr class="table-warning">
+            <td><strong>17h35 - 18h00</strong></td>
+            <td><strong>Cocktail de Clôture</strong><br><span class="text-dark">À la terrasse de l'Hôtel Elizabeth</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================================= -->
+<!-- DEBUT DE LA SECTION PARTENAIRES (BANDE PASSANTE AVEC IMAGES EN BOUCLE) -->
+<!-- ================================================================================= -->
+<section id="partenaires" class="partenaires section light-background" style="padding: 60px 0; overflow: hidden; background-color: #f8f9fa;">
+  <div class="container section-title" data-aos="fade-up" style="text-align: center; margin-bottom: 40px;">
+    <h2 style="font-size: 2rem; font-weight: 700; color: #2c4964; position: relative; padding-bottom: 20px;">Institutions & Partenaires</h2>
+    <p style="color: #777777; font-style: italic;">Sous l'égide des autorités scientifiques, sanitaires et de recherche.</p>
+  </div>
+
+  <!-- Conteneur principal du défilement -->
+  <div class="partenaires-slider" style="position: relative; width: 100%; overflow: hidden; padding: 25px 0; background: #ffffff; box-shadow: inset 0 10px 20px rgba(0,0,0,0.03), inset 0 -10px 20px rgba(0,0,0,0.03);">
+    
+    <!-- Masques de dégradé pour un effet visuel fluide sur les bords -->
+    <div class="slider-mask-left" style="position: absolute; left: 0; top: 0; height: 100%; width: 150px; background: linear-gradient(to right, #ffffff, rgba(255,255,255,0)); z-index: 2; pointer-events: none;"></div>
+    <div class="slider-mask-right" style="position: absolute; right: 0; top: 0; height: 100%; width: 150px; background: linear-gradient(to left, #ffffff, rgba(255,255,255,0)); z-index: 2; pointer-events: none;"></div>
+
+    <!-- Piste de défilement (6 logos dupliqués = 12 blocs au total pour une boucle infinie) -->
+    <div class="partenaires-track" style="display: flex; width: calc(250px * 12); animation: defilementLogos 25s linear infinite;">
+      
+      <!-- ==================== GROUPE 1 (Original) ==================== -->
+ 
+        <!-- Partenaire 0  -->
+      <div class="partenaire-logo" style="width: 250px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 25px; text-align: center;">
+        <div class="logo-box" style="height: 80px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+          <img src="Shalina.jpeg" alt="Shalina" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+        </div>
+        <span style="font-weight: 700; color: #1977cc; font-size: 0.9rem; letter-spacing: 0.5px;">SHALINA</span>
+        <small style="font-size: 0.65rem; color: #999999; text-transform: uppercase">Firme pharmaceutique</small>
+      </div>
+
+<!-- Partenaire 1 -->
+      <div class="partenaire-logo" style="width: 250px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 25px; text-align: center;">
+        <div class="logo-box" style="height: 80px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+          <img src="MSA.jpg" alt="BMRI Cape Town" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+        </div>
+        <span style="font-weight: 700; color: #dc3545; font-size: 0.9rem; letter-spacing: 0.5px;">MSA DRC</span>
+        <small style="font-size: 0.65rem; color: #999999; text-transform: uppercase;">SUD-KIVU</small>
+      </div>
+        
+        <!-- Partenaire 2  -->
+      <div class="partenaire-logo" style="width: 250px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 25px; text-align: center;">
+        <div class="logo-box" style="height: 80px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+          <img src="Cesamex.jpeg" alt="New Cesamex" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+        </div>
+        <span style="font-weight: 700; color: #1977cc; font-size: 0.9rem; letter-spacing: 0.5px;">NEW CESAMEX</span>
+        <small style="font-size: 0.65rem; color: #999999; text-transform: uppercase;"> Firme pharmaceutique </small>
+      </div>
+      
+      <!-- Partenaire 3  -->
+      <div class="partenaire-logo" style="width: 250px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 25px; text-align: center;">
+        <div class="logo-box" style="height: 80px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+          <img src="UEA.jpeg" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+        </div>
+        <span style="font-weight: 700; color: #2c4964; font-size: 0.9rem; letter-spacing: 0.5px;">UEA</span>
+        <small style="font-size: 0.65rem; color: #999999; text-transform: uppercase;">UEA</small>
+      </div>
+
+<!-- Partenaire 4  -->
+      <div class="partenaire-logo" style="width: 250px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 25px; text-align: center;">
+        <div class="logo-box" style="height: 80px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+          <img src="luob.jpeg" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+        </div>
+        <span style="font-weight: 700; color: #2c4964; font-size: 0.9rem; letter-spacing: 0.5px;">UOB</span>
+        <small style="font-size: 0.65rem; color: #999999; text-transform: uppercase;">UOB</small>
+      </div>
+        
+      <!-- Partenaire 5 -->
+      <div class="partenaire-logo" style="width: 250px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 25px; text-align: center;">
+        <div class="logo-box" style="height: 80px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+          <img src="crms.jpeg" alt="BMRI Cape Town" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+        </div>
+        <span style="font-weight: 700; color: #dc3545; font-size: 0.9rem; letter-spacing: 0.5px;">CRMS UOB</span>
+        <small style="font-size: 0.65rem; color: #999999; text-transform: uppercase;">UOB</small>
+      </div>
+
+      <!-- Partenaire 6  -->
+      <div class="partenaire-logo" style="width: 250px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 25px; text-align: center;">
+        <div class="logo-box" style="height: 80px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+          <img src="CUM.jpeg" alt="BMRI Cape Town" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+        </div>
+        <span style="font-weight: 700; color: #dc3545; font-size: 0.9rem; letter-spacing: 0.5px;">CUM</span>
+        <small style="font-size: 0.65rem; color: #999999; text-transform: uppercase;">UOB</small>
+      </div>
+
+<!-- ==================== GROUPE 2 (Doublons) ==================== -->
+ 
+      <!-- Partenaire 0  -->
+      <div class="partenaire-logo" style="width: 250px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 25px; text-align: center;">
+        <div class="logo-box" style="height: 80px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+          <img src="Shalina.jpeg" alt="Shalina" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+        </div>
+        <span style="font-weight: 700; color: #1977cc; font-size: 0.9rem; letter-spacing: 0.5px;">SHALINA</span>
+        <small style="font-size: 0.65rem; color: #999999; text-transform: uppercase;"> Firme pharmaceutique </small>
+      </div>
+
+        <!-- Partenaire 1  -->
+      <div class="partenaire-logo" style="width: 250px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 25px; text-align: center;">
+        <div class="logo-box" style="height: 80px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+          <img src="MSA.jpg" alt="BMRI Cape Town" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+        </div>
+        <span style="font-weight: 700; color: #dc3545; font-size: 0.9rem; letter-spacing: 0.5px;">MSA DRC</span>
+        <small style="font-size: 0.65rem; color: #999999; text-transform: uppercase;">SUD-KIVU</small>
+      </div>
+        
+        <!-- Partenaire 2  -->
+      <div class="partenaire-logo" style="width: 250px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 25px; text-align: center;">
+        <div class="logo-box" style="height: 80px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+          <img src="Cesamex.jpeg" alt="New Cesamex" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+        </div>
+        <span style="font-weight: 700; color: #1977cc; font-size: 0.9rem; letter-spacing: 0.5px;">NEW CESAMEX</span>
+        <small style="font-size: 0.65rem; color: #999999; text-transform: uppercase;"> Firme pharmaceutique </small>
+      </div>
+      
+      <!-- Partenaire 3  -->
+      <div class="partenaire-logo" style="width: 250px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 25px; text-align: center;">
+        <div class="logo-box" style="height: 80px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+          <img src="UEA.jpeg" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+        </div>
+        <span style="font-weight: 700; color: #2c4964; font-size: 0.9rem; letter-spacing: 0.5px;">UEA</span>
+        <small style="font-size: 0.65rem; color: #999999; text-transform: uppercase;">UEA</small>
+      </div>
+
+<!-- Partenaire 4  -->
+      <div class="partenaire-logo" style="width: 250px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 25px; text-align: center;">
+        <div class="logo-box" style="height: 80px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+          <img src="luob.jpeg" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+        </div>
+        <span style="font-weight: 700; color: #2c4964; font-size: 0.9rem; letter-spacing: 0.5px;">UOB</span>
+        <small style="font-size: 0.65rem; color: #999999; text-transform: uppercase;">UOB</small>
+      </div>
+        
+      <!-- Partenaire 5 -->
+      <div class="partenaire-logo" style="width: 250px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 25px; text-align: center;">
+        <div class="logo-box" style="height: 80px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+          <img src="crms.jpeg" alt="BMRI Cape Town" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+        </div>
+        <span style="font-weight: 700; color: #dc3545; font-size: 0.9rem; letter-spacing: 0.5px;">CRMS UOB</span>
+        <small style="font-size: 0.65rem; color: #999999; text-transform: uppercase;">UOB</small>
+      </div>
+
+      <!-- Partenaire 6  -->
+      <div class="partenaire-logo" style="width: 250px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 25px; text-align: center;">
+        <div class="logo-box" style="height: 80px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+          <img src="CUM.jpeg" alt="BMRI Cape Town" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+        </div>
+        <span style="font-weight: 700; color: #dc3545; font-size: 0.9rem; letter-spacing: 0.5px;">CUM</span>
+        <small style="font-size: 0.65rem; color: #999999; text-transform: uppercase;">UOB</small>
+      </div>
+
+        
+    </div>
+  </div>
+</section>
+
+<!-- Configuration de l'animation CSS fluide -->
+<style>
+@keyframes defilementLogos {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    /* Déplacement égal à la largeur cumulée du premier groupe (6 logos * 250px = 1500px) */
+    transform: translate3d(-1500px, 0, 0);
+  }
+}
+
+/* Met la boucle en pause au survol de la souris */
+.partenaires-slider:hover .partenaires-track {
+  animation-play-state: paused;
+}
+</style>
+<!-- ================================================================================= -->
+<!-- FIN DE LA SECTION PARTENAIRES -->
+<!-- ================================================================================= -->
+
+
+
+        
+         <!-- Gallery Section -->
+    <section id="gallery" class="gallery section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Gallery</h2>
+        <p>Club Univers Medical et Collaborateurs</p>
+      </div><!-- End Section Title -->
+
+      <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row g-0">
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="assets/img/gallery/gallery-1.jpg" class="glightbox" data-gallery="images-gallery">
+                <img src="assets/img/gallery/gallery-1.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div><!-- End Gallery Item -->
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="assets/img/gallery/gallery-2.png" class="glightbox" data-gallery="images-gallery">
+                <img src="assets/img/gallery/gallery-2.png" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div><!-- End Gallery Item -->
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="k.jpg" class="glightbox" data-gallery="images-gallery">
+                <img src="k.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div><!-- End Gallery Item -->
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="assets/img/gallery/gallery-4.jpg" class="glightbox" data-gallery="images-gallery">
+                <img src="assets/img/gallery/gallery-4.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div><!-- End Gallery Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Gallery Section -->
+
+
+  </main>
+  
+  <footer id="footer" class="footer light-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+
+<strong> <h2><span id="su">SO</span><span id="so">CO</span><span id="sb">MI</span>/SUD-KIVU<br></strong>
+
+          
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">Club Univers Médical</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>RDC/BUKAVU</p>
+            <p>Cliniques Universitaires de Bukavu</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+243996991891</span></p>
+            <p><strong>Email:</strong> <span>Clubuniversmedical@uob.ac.cd</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href="https://x.com/CumMedical/status/1593155932686790656"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.facebook.com/people/Club-Univers-M%C3%A9dical-CUMUOB/100069585457841/"><i class="bi bi-facebook"></i></a>
+            <a href="https://api.whatsapp.com/send/?phone=243996 991 891&text=Bonjour%2FBonsoir%2C%20%0AJ'aimerais%20avoir%20*plus%20d'informations*%20concernant%20la formation%20en%20recherche%20Scientifique"><i class="bi bi-whatsapp"></i></a>
+            <a href="https://cd.linkedin.com/in/daniel-kakusu-b3510a175/en"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>A propos</h4>
+          <ul>
+            <li><a href="https://clubuniversmedical.blogspot.com/p/acceuil.html">Accueil</a></li>
+            <li><a href="https://clubuniversmedical.blogspot.com/p/a-propos.html">About us</a></li>
+            <li><a href="https://clubuniversmedical.blogspot.com/p/a-propos.html">Services</a></li>
+            <li><a href="https://clubuniversmedical.blogspot.com/p/a-propos.html">Nos departements</a></li>
+            <li><a href="https://clubuniversmedical.blogspot.com/p/a-propos.html">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Nos départements</h4>
+          <ul>
+            <li><a href="https://clubuniversmedical.blogspot.com/p/departement-de-recherches-scientifiques.html">Recherche Scientifique</a></li>
+            <li><a href="https://clubuniversmedical.blogspot.com/p/club-univers-medical.html">Conférence Sem. et Débats</a></li>
+            <li><a href="https://clubuniversmedical.blogspot.com/p/departement-de-culture.html">Cultures</a></li>
+            <li><a href="https://clubuniversmedical.blogspot.com/p/departement-de-langues.html">Langues</a></li>
+            <li><a href="https://clubuniversmedical.blogspot.com/p/departement-de-revue-et-communication.html">Révues et Communivations</a></li>
+           <li><a href="https://clubuniversmedical.blogspot.com/p/departement-de-genie-medecine.html">Génie Medecine</a></li>
+          </ul>
+        </div>
+
+     
+       
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">C.U.M/UOB</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="https://clubuniversmedical.blogspot.com/p/a-propos.html">C.U.M/UOB</a>
+      </div>
+    </div>
+
+  </footer>
+
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <div id="preloader"></div>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
